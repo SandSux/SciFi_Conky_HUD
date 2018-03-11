@@ -1,10 +1,14 @@
 ## SciFi_Conky_HUD
 
-Conky is a free system monitor tool for the X window system on Linux. It is able to monitor many system varaibles including CPU status, swap space, temperatures, disk usage, processes, network interfaces, battery status and a slew of others and then display the information on your desktop. It is also capable of displaying time, calendars, weather and more. 
+Conky is a free system monitor tool for the X window system on Linux. It is able to monitor many system varaibles including CPU status, swap space, temperatures, disk usage, processes, network interfaces, battery status and a slew of others and then display the information on your desktop. It is also capable of displaying time, calendars, weather and more.
 
-I cannot take full credit for this configuration. this beautiful config was written by a Hungarian developer see "Contributors" below. 
+I cannot take full credit for this configuration. this beautiful config was written by a Hungarian developer see "Contributors" below.
 
 You can grab [the latest release from github](https://github.com/brndnmtthws/conky/releases/latest)
+
+## Screenshots
+
+![screen](https://user-images.githubusercontent.com/26425982/37259259-59794b1e-255a-11e8-9541-6cd5de5cd543.png)
 
 ## Documentation
 
@@ -20,8 +24,10 @@ You can also visit GitHub's Conky Wiki for more [Installation options and inform
 
 Next, we need to install a few dependencies that did not come with our 'conky-all' package that we are going to need to get all these configs to run.
 
-**Dependencies:**
-+ Conky with LUA support and Cairo bindings.
+## Dependencies
+
+    + Conky with LUA support and Cairo bindings.
+    + Openweathermap API Key
 
 **Install JQ**
 
@@ -54,29 +60,25 @@ In order to populate more data and achieve more functionality with this script, 
 
 2. Next, run `sudo sensors-detect` to configure sensors, then follow the prompts by responding "yes" to all. At the end of detection, lm-sensors will write out all detected sensors so Conky can use the data. You can test this after configuration by running the command `sensors`
 
-4. Optional: Install Conky Manager (GUI tool for those who prefer not to work in the command line)
+3. Optional: Install Conky Manager (GUI tool for those who prefer not to work in the command line)
 
-    Add the neccessary repository:
-    `sudo add-apt-repository ppa:teejee2008/ppa`
+    + Add the neccessary repository: `sudo add-apt-repository ppa:teejee2008/ppa`
 
-      Update: `sudo apt update`
+    + Update: `sudo apt update`
 
-      Install Conky Manager:
+    +  Install Conky Manager:
       `sudo apt-get install conky-manager`
-  
 
- 
 ## Configuration
 
-1.  
+1. Openweathermap API - visit [OpenWeatherMap](https://openweathermap.org/api) to sign up for your API key
+
+  + You will also need to find your City_ID  [here](http://openweathermap.org/help/city_list.txt). (Use [ctl-f] to search page)
 
 **Changes**
-
-1. Compiled documentation and wrote README.md
-
-2. Translated all Hungarian comments to English
-
-3. Changed UTF-8 character encoding from Hungarian to en_US.UTF-8 on line 67 of weather.rc 
++ Compiled documentation and wrote README.md
++ Translated all Hungarian comments to English
++ Changed UTF-8 character encoding from Hungarian to en_US.UTF-8 on line 67 of weather.rc
 
 ## API Reference
 
@@ -97,3 +99,4 @@ MIT License:
     use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
     the Software, and to permit persons to whom the Software is furnished to do so,
     subject to the following conditions:
+
