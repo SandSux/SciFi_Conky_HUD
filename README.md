@@ -97,7 +97,7 @@ In order to populate neccessary sensor data and achieve functionality with this 
     
 5. Next, some values need to be changed in a couple configuration files so that they reflect your system hardware interfaces.
     - Pick your favorite text editor and open the net.rc file. 
-    - In `net.rc` towards the bottom there are a few lines where you will enter the designator for your wireless adapter interface marked as `<YOUR_WIFI_INTERFACE>'. If you are unsure what your wireless interface is called, run `ifconfig` to display a list of your network interfaces. It will likely be `wlan0` or something to the effect of `wlp**0`.
+    - In `net.rc` towards the bottom there are a few lines where you will enter the designator for your wireless adapter interface marked as `<YOUR_WIFI_INTERFACE>`. If you are unsure what your wireless interface is called, run `ifconfig` to display a list of your network interfaces. It will likely be `wlan0` or something to the effect of `wlp**0`.
     
 6. Open your weather.rc file and enter your openweathermap 'API_KEY` and your 'CITY_ID' 
 
