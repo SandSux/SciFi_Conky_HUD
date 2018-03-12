@@ -83,8 +83,8 @@ In order to populate neccessary sensor data and achieve functionality with this 
 3. Openweathermap API - visit [OpenWeatherMap](https://openweathermap.org/api) to sign up for your API key
 
  ![openweathermap_screen](https://user-images.githubusercontent.com/26425982/37260065-30a48338-2565-11e8-98be-c9174c022775.png)
- 
- + You will also need to find your City_ID [here](http://openweathermap.org/help/city_list.txt). (Use [CTRL+f] to search page) or use the included `city_list.txt` file (it's the same list as the linked one).
+
++ You will also need to find your City_ID [here](http://openweathermap.org/help/city_list.txt). (Use [CTRL+f] to search page) or use the included `city_list.txt` file (it's the same list as the linked one).
   
 3. Included in this repo is a file named "conky_start" which we need to issue a `chmod` command to in order to make it executable 
 
@@ -97,9 +97,9 @@ In order to populate neccessary sensor data and achieve functionality with this 
     
 5. Next, some values need to be changed in a couple configuration files so that they reflect your system hardware interfaces.
     - Pick your favorite text editor and open the net.rc file. 
-    - In `net.rc` towards the bottom there are a few lines where you will enter your wireless adapter interface. You can run `ifconfig` to find out what your wireless adaper is called. It will likely be `wlan0` or something to the effect of `wlp**0`.
+    - In `net.rc` towards the bottom there are a few lines where you will enter the designator for your wireless adapter interface marked as `<YOUR_WIFI_INTERFACE>'. If you are unsure what your wireless interface is called, run `ifconfig` to display a list of your network interfaces. It will likely be `wlan0` or something to the effect of `wlp**0`.
     
-6. Open weather.rc and enter your openweathermap API key and your City_ID
+6. Open your weather.rc file and enter your openweathermap 'API_KEY` and your 'CITY_ID' 
 
 7. Autorun at start:
    - Commands can be run at login by placing a launcher in the `~/.config/autostart` or by adding an entry to your `Startup Applications`gui
