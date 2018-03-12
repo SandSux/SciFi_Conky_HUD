@@ -1,0 +1,53 @@
+conky.config = {
+-- Conky settings --
+    update_interval = 1,							--update time in seconds
+    background = true,								--translucent background
+    cpu_avg_samples = 2,							--cpu for more accurate monitoring
+    net_avg_samples = 2,							--internet for accurate monitoring
+    diskio_avg_samples = 2, 						--drive for more accurate monitorinmg
+    override_utf8_locale = true,					--overrides character encoding
+    double_buffer = true,							--reduces frame flicker
+    no_buffers  = true,
+    text_buffer_size = 256, 						--text buffer size
+    imlib_cache_size = 10,
+    max_user_text = 15000,
+    format_human_readable = true,					--units in non-bytes
+
+-- Window specifications --
+    own_window = true,  							--turn onm your own window settings
+    own_window_type = 'normal',   					--window types, override = window manager rules do not apply, desktop = unedited panel = always top, dock = always over, normal = normal
+    own_window_transparent = false,  				--conky window becomes transparent
+    own_window_argb_visual = true,  				--trsansparent window
+    own_window_argb_value = 0,      				--degree of transparency 0-255
+    own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager', 	--window properties below = skip_taskbar = ignore tray undecorated = remove frame and buttons override = window manager override sticky = all workspaces
+    own_window_title = 'process',
+    minimum_width = 390,        					--minimum width
+    minimum_height = 380, 							--minimum height
+    alignment = 'top_left', 						--top right corner
+    gap_x = 25,   								    --x direction shift
+    gap_y = 750, 								    --y direction shift
+
+-- Graphics settings --
+    draw_shades = false, 							--test shading
+    draw_outline = false,							--draw around
+    draw_borders = false,							--draw a rectangular frame
+    draw_graph_borders = false, 					--frame around the graph
+    border_width = 0, 								--thickness of the fame
+
+-- Text settings --
+    use_xft = true, 								--antialiasing
+    font = 'Ubuntu:size=7',          				--default font type
+    color0 = '39c9c4',								--predetermined color
+    color1 = 'd59704',
+    color2 = '794e64',
+
+};
+
+conky.text = [[
+${image ~/.conky/images/user.png -p 0,0}
+${alignc}${color0}${font :bold:size=7}${kernel} - $machine
+${voffset 4}${goto 10}${execi 600 whoami} - ${nodename}
+${image ~/.face -p 15,47 -s 200x200}
+${voffset -4}${alignr 10}${uptime}
+${voffset 235}${alignc}${execpi 6000 lsb_release -d | grep 'Descr'|awk {'print $2 " " $3" " $4" " $5'}}
+]];

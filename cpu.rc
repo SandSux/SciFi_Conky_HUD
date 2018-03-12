@@ -1,0 +1,68 @@
+conky.config = {
+-- Conky settings --
+    update_interval = 1,							--update time in seconds
+    background = true,								--translucent background
+    cpu_avg_samples = 2,							--cpu for more accurate monitorimg
+    net_avg_samples = 2,							--internet more accurate monitoring
+    diskio_avg_samples = 2, 						--drive for more accurate monitoring
+    override_utf8_locale = true,					--overrides character encoding
+    double_buffer = true,							--reduces frame flicker
+    no_buffers  = true,
+    text_buffer_size = 256, 						--text buffer size
+    imlib_cache_size = 10,
+    max_user_text = 15000,
+    format_human_readable = true,					--units in non-bytes
+
+-- Window specifications --
+    own_window = true,  							--turn on your own window setings
+    own_window_type = 'normal',   					--window types, override = window manager rules do not apply, desktop = unedited panel = always top, dock = always over, normal = normal
+    own_window_transparent = false,  				--conky window becomes transparent
+    own_window_argb_visual = true,  				--transparent Window
+    own_window_argb_value = 0,      				--degree of transparency 0-255
+    own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager', 	--window properties below = skip_taskbar = ignore tray undecorated = remove frame and buttons override = window manager override sticky = all workspaces
+    own_window_title = 'cpu',
+    minimum_width = 1270,        					--minimum width
+    minimum_height = 380, 							--minimum height
+    alignment = 'top_left', 						--top right corner
+    gap_x = 435,   								    --x direction shift
+    gap_y = 630, 								    --y direction shift
+
+-- Graphics settings --
+    draw_shades = false, 							--text shading
+    draw_outline = false,							--draw around
+    draw_borders = false,							--draw a rectangular frame
+    draw_graph_borders = false, 					--frame around the graph
+    border_width = 0, 								--thickness of the frame
+
+-- Text settings --
+    use_xft = true, 								--antialiasing
+    font = 'Ubuntu:size=7',          				--default font type
+    color0 = '39c9c4',								--predetermined color
+    color1 = 'd59704',
+    color2 = '794e64',
+
+    lua_load = '~/.conky/lua/cpu.lua',    --path to .lua file
+    lua_draw_hook_pre = 'main',
+
+};
+
+conky.text = [[
+${image ~/.conky/images/cpu.png -p 0,0}
+${image ~/.conky/images/cpu_0.png -p 10,140 -s 50x50}${image ~/.conky/images/cpu_1.png -p 264,140 -s 50x50}${image ~/.conky/images/cpu_2.png -p 518,140 -s 50x50}${image ~/.conky/images/cpu_3.png -p 772,140 -s 50x50}${image ~/.conky/images/cpu_4.png -p 1026,140 -s 50x50}
+${color1}${voffset 120}${alignr 1030}${freq cpu0} Mhz
+${alignr 1030}${cpu cpu0} %
+${color2}${alignr 1030}${exec sensors | grep "Package id 0:" | cut -c17-23}
+${color1}${voffset -33}${alignr 776}${freq cpu1} Mhz
+${alignr 776}${cpu cpu1} %
+${color2}${alignr 776}${exec sensors | grep "Core 0:" | cut -c17-23}
+${color1}${voffset -33}${alignr 522}${freq cpu2} Mhz
+${alignr 522}${cpu cpu2} %
+${color2}${alignr 522}${exec sensors | grep "Core 1:" | cut -c17-23}
+${color1}${voffset -33}${alignr 268}${freq cpu3} Mhz
+${alignr 268}${cpu cpu3} %
+${color2}${alignr 268}${exec sensors | grep "Core 2:" | cut -c17-23}
+${color1}${voffset -33}${alignr 14}${freq cpu4} Mhz
+${alignr 14}${cpu cpu4} %
+${color2}${alignr 14}${exec sensors | grep "Core 3:" | cut -c17-23}
+${color}${voffset 180}${goto 110}${exec sensors | grep "cpu_fan:" | cut -c14-21}${goto 366}Core1${goto 622}Core2${goto 878}Core3${goto 1134}Core4
+]];

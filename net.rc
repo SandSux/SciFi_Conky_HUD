@@ -1,0 +1,58 @@
+conky.config = {
+-- Conky settings --
+    update_interval = 1,
+    background = true,
+    cpu_avg_samples = 2,
+    net_avg_samples = 2,
+    diskio_avg_samples = 2,
+    override_utf8_locale = true,
+    double_buffer = true,
+    no_buffers  = true,
+    text_buffer_size = 256,
+    imlib_cache_size = 10,
+    max_user_text = 15000,
+    format_human_readable = true,
+
+-- Window specifications --
+    own_window = true,
+    own_window_type = 'normal',
+    own_window_transparent = false,
+    own_window_argb_visual = true,
+    own_window_argb_value = 0,
+    own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager',
+    own_window_title = 'net',
+    minimum_width = 550,
+    minimum_height = 320,
+    alignment = 'top_left',
+    gap_x = 1340,
+    gap_y = 20,
+
+-- Graphics settings --
+    draw_shades = false,
+    draw_outline = false,
+    draw_borders = false,
+    draw_graph_borders = false,
+    border_width = 0,
+
+-- Text settings --
+    use_xft = true,
+    font = 'Ubuntu:size=7',
+    color0 = '39c9c4',
+    color1 = 'd59704',
+    color2 = '794e64',
+
+    lua_load = '~/.conky/lua/battery.lua',
+    lua_draw_hook_post = 'main_bars',
+};
+
+conky.text = [[
+${image ~/.conky/images/net.png -p 0,0}
+${goto 390}${voffset 8}${color0}${font :bold:size=8}BATTERY STATUS
+${goto 24}${downspeedgraph <"Your_Interface"> 95,400 1d1501 d59704}
+${goto 24}${voffset 34}${upspeedgraph <"Your_Interface"> -95,400 1b1217 794e64}
+${goto 50}${voffset 45}${font :bold:size=6}Download Speed${goto 150}${downspeed <"Your_Interface">}${goto 250}Total Download${goto 350}${totaldown <"Your_Interface">}
+${goto 50}Upload Speed${goto 150}${upspeed <"Your_Interface">}${goto 250}Total Upload${goto 350}${totalup <"Your_Interface">}
+${goto 50}${voffset 2}SSID:${goto 80}${wireless_essid <"Your_Interface">} - ${wireless_bitrate <"Your_Interface">}${goto 200}Signal:${goto 240}${wireless_link_qual <"Your_Interface">}%${alignr 110}${font :bold:size=8}${addr <"Your_Interface">}
+${goto 30}${voffset 8}LOCATING AREA${alignr 110}${execi 3600 wget -q -O - http://icanhazip.com}
+${alignc -195}${voffset -60}${battery_percent BAT0}%
+]];

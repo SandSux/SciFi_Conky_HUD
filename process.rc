@@ -1,0 +1,63 @@
+conky.config = {
+-- Conky settings --
+    update_interval = 1,							--update time in seconds
+    background = true,								--translucent background
+    cpu_avg_samples = 2,							--cpu for more accurate monitoring
+    net_avg_samples = 2,							--internet for accurate monitoring
+    diskio_avg_samples = 2, 						--drive for more accurate monitorinmg
+    override_utf8_locale = true,					--overrides character encoding
+    double_buffer = true,							--reduces frame flicker
+    no_buffers  = true,
+    text_buffer_size = 256, 						--text buffer size
+    imlib_cache_size = 10,
+    max_user_text = 15000,
+    format_human_readable = true,					--units in non-bytes
+
+-- Window specifications --
+    own_window = true,  							--turn onm your own window settings
+    own_window_type = 'normal',   					--window types, override = window manager rules do not apply, desktop = unedited panel = always top, dock = always over, normal = normal
+    own_window_transparent = false,  				--conky window becomes transparent
+    own_window_argb_visual = true,  				--trsansparent window
+    own_window_argb_value = 0,      				--degree of transparency 0-255
+    own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager', 	--window properties below = skip_taskbar = ignore tray undecorated = remove frame and buttons override = window manager override sticky = all workspaces
+    own_window_title = 'process',
+    minimum_width = 390,        					--minimum width
+    minimum_height = 380, 							--minimum height
+    alignment = 'top_left', 						--top right corner
+    gap_x = 25,   								    --x direction shift
+    gap_y = 750, 								    --y direction shift
+
+-- Graphics settings --
+    draw_shades = false, 							--test shading
+    draw_outline = false,							--draw around
+    draw_borders = false,							--draw a rectangular frame
+    draw_graph_borders = false, 					--frame around the graph
+    border_width = 0, 								--thickness of the fame
+
+-- Text settings --
+    use_xft = true, 								--antialiasing
+    font = 'Ubuntu:size=7',          				--default font type
+    color0 = '39c9c4',								--predetermined color
+    color1 = 'd59704',
+    color2 = '794e64',
+
+
+};
+
+conky.text = [[
+${image ~/.conky/images/task.png -p 0,0}
+${alignr 30}${voffset -10}${font :size=10}${color0}Top Process${font}${color}
+${voffset 5}${goto 17}mem
+${color2}${voffset 3}${goto 26}${font :size=8}1${voffset -8}${alignc 40}${top_mem mem 1} % ${voffset 8}${goto 176}${top_mem name 1}${alignr 25}${top_mem mem_res 1}
+${color1}${voffset 16}${goto 26}2${voffset -8}${alignc 40}${top_mem mem 2} % ${voffset 8}${goto 176}${top_mem name 2}${alignr 25}${top_mem mem_res 2}
+${voffset 16}${goto 26}3${voffset -8}${alignc 40}${top_mem mem 3} % ${voffset 8}${goto 176}${top_mem name 3}${alignr 25}${top_mem mem_res 3}
+${voffset 16}${goto 26}4${voffset -8}${alignc 40}${top_mem mem 4} % ${voffset 8}${goto 176}${top_mem name 4}${alignr 25}${top_mem mem_res 4}
+${voffset 15}${goto 26}5${voffset -8}${alignc 40}${top_mem mem 5} % ${voffset 8}${goto 176}${top_mem name 5}${alignr 25}${top_mem mem_res 5}${color}
+${voffset 1}${goto 17}cpu
+${color2}${voffset 2}${goto 26}1${voffset -8}${alignc 40}${top cpu 1} % ${voffset 8}${goto 176}${top name 1}${alignr 25}${top mem_res 1}
+${color1}${voffset 16}${goto 26}2${voffset -8}${alignc 40}${top cpu 2} % ${voffset 8}${goto 176}${top name 2}${alignr 25}${top mem_res 2}
+${voffset 16}${goto 26}3${voffset -8}${alignc 40}${top cpu 3} % ${voffset 8}${goto 176}${top name 3}${alignr 25}${top mem_res 3}
+${voffset 16}${goto 26}4${voffset -8}${alignc 40}${top cpu 4} % ${voffset 8}${goto 176}${top name 4}${alignr 25}${top mem_res 4}
+${voffset 16}${goto 26}5${voffset -8}${alignc 40}${top cpu 5} % ${voffset 8}${goto 176}${top name 5}${alignr 25}${top mem_res 5}
+${alignr 30}${voffset 20}${font :size=10}${color0}Total: ${processes} - Runing:${running_processes}${font}${color}
+]];

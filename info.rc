@@ -1,0 +1,64 @@
+conky.config = {
+-- Conky settings --
+    update_interval = 1,
+    background = true,
+    cpu_avg_samples = 2,
+    net_avg_samples = 2,
+    diskio_avg_samples = 2,
+    override_utf8_locale = true,
+    double_buffer = true,
+    no_buffers  = true,
+    text_buffer_size = 256,
+    imlib_cache_size = 10,
+    max_user_text = 15000,
+    format_human_readable = true,
+
+-- Window specifications --
+    own_window = true,
+    own_window_type = 'normal',
+    own_window_transparent = false,
+    own_window_argb_visual = true,
+    own_window_argb_value = 0,
+    own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager',
+    own_window_title = 'info',
+    minimum_width = 170,
+    minimum_height = 660,
+    alignment = 'top_left',
+    gap_x = 1730,
+    gap_y = 350,
+
+-- Graphics settings --
+    draw_shades = false,
+    draw_outline = false,
+    draw_borders = false,
+    draw_graph_borders = false,
+    border_width = 0,
+
+-- Text settings --
+    use_xft = true,
+    font = 'Ubuntu:size=7',
+    color0 = '39c9c4',
+    color1 = 'd59704',
+    color2 = '794e64',
+
+    lua_load = '~/.conky/lua/clock.lua',    path to .lua file
+    lua_draw_hook_post = 'main',
+
+};
+
+conky.text = [[
+${image ~/.conky/images/info.png -p 0,0}
+${color0}${alignc}${voffset 80}${font :bold:size=7}Codename: ${execi 65000 lsb_release -cs | awk '{print $1}'}
+${alignc}KDE Frameworks: ${execi 65000 kf5-config --version | grep KDE | awk '{print $3}'}
+${alignc}Qt version: ${execi 65000 kf5-config --version | grep Qt | awk '{print $2}'}
+${alignc}Desktop: Plasma ${execi 65000 plasmashell -v | awk '{print $2}'}
+${alignc}${voffset 80}${font :bold:size=11}${time %H:%M}
+${alignc}${font :bold:size=7}${time %S}
+${alignc}${voffset 55}${font :bold:size=7}${time %Y %B %d}
+${alignc}${font :bold:size=7}${time %A}
+${alignc}${voffset 85}${execpi 1800 nvidia-smi -q | grep "Product Name" | sed -e 's/.*: /nVidia /'}
+${alignc}${execpi 1800 nvidia-smi -q | grep "Driver Version" | awk '{print $4}'}
+
+${if_updatenr 1}${image ~/.conky/images/anim/bit9.png -p 23,355 -s 124x47}${endif}${if_updatenr 2}${image ~/.conky/images/anim/bit8.png -p 23,355 -s 124x47}${endif}${if_updatenr 3}${image ~/.conky/images/anim/bit7.png -p 23,355 -s 124x47}${endif}${if_updatenr 4}${image ~/.conky/images/anim/bit6.png -p 23,355 -s 124x47}${endif}${if_updatenr 5}${image ~/.conky/images/anim/bit5.png -p 23,355 -s 124x47}${endif}${if_updatenr 6}${image ~/.conky/images/anim/bit4.png -p 23,355 -s 124x47}${endif}${if_updatenr 7}${image ~/.conky/images/anim/bit3.png -p 23,355 -s 124x47}${endif}${if_updatenr 8}${image ~/.conky/images/anim/bit2.png -p 23,355 -s 124x47}${endif}${if_updatenr 9}${image ~/.conky/images/anim/bit1.png -p 23,355 -s 124x47}${endif}${if_updatenr 10}${image ~/.conky/images/anim/bit0.png -p 23,355 -s 124x47}${endif}
+${if_updatenr 1}${image ~/.conky/images/anim1/01.png -p 23,455 -s 120x60}${endif}${if_updatenr 2}${image ~/.conky/images/anim1/02.png -p 23,455 -s 120x60}${endif}${if_updatenr 3}${image ~/.conky/images/anim1/03.png -p 23,455 -s 120x60}${endif}${if_updatenr 4}${image ~/.conky/images/anim1/04.png -p 23,455 -s 120x60}${endif}${if_updatenr 5}${image ~/.conky/images/anim1/05.png -p 23,455 -s 120x60}${endif}${if_updatenr 6}${image ~/.conky/images/anim1/01.png -p 23,455 -s 120x60}${endif}${if_updatenr 7}${image ~/.conky/images/anim1/02.png -p 23,455 -s 120x60}${endif}${if_updatenr 8}${image ~/.conky/images/anim1/03.png -p 23,455 -s 120x60}${endif}${if_updatenr 9}${image ~/.conky/images/anim1/04.png -p 23,455 -s 120x60}${endif}${if_updatenr 10}${image ~/.conky/images/anim1/05.png -p 23,455 -s 120x60}${endif}
+]];

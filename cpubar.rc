@@ -1,0 +1,52 @@
+conky.config = {
+-- Conky settings --
+    update_interval = 1,							--update time in seconds
+    background = true,								--translucent background
+    cpu_avg_samples = 2,							--cpu for more accurate monitoring
+    net_avg_samples = 2,							--internet more accurate monitoring
+    diskio_avg_samples = 2, 						--drive for more accurate monitoring
+    override_utf8_locale = true,					--overrides character encoding
+    double_buffer = true,							--reduces frame flicker
+    no_buffers  = true,
+    text_buffer_size = 256, 						--text buffer size
+    imlib_cache_size = 10,
+    max_user_text = 15000,
+    format_human_readable = true,					--units in non-bytes
+
+-- Window specifications --
+    own_window = true,  							--turn on your own window settings
+    own_window_type = 'normal',   					--window types, override = window manager rules do not apply, desktop = unedited panel = always top, dock = always over, normal = normal
+    own_window_transparent = false,  				--conky window beocmes transparent
+    own_window_argb_visual = true,  				--transparent window
+    own_window_argb_value = 0,      				--degree of transparency 0-255
+    own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager', 	--window properties below = skip_taskbar = ignore tray undecorated = remove frame and buttons override = window manager override sticky = all workspaces
+    own_window_title = 'cpubar',
+    minimum_width = 1270,        					--minimum width
+    minimum_height = 113, 							--minimum height
+    alignment = 'top_left', 						--top right corner
+    gap_x = 430,   								    --x direction shift
+    gap_y = 630, 								    --y direction shift
+
+-- Graphics settings --
+    draw_shades = false, 							--text shadimg
+    draw_outline = false,							--draw around
+    draw_borders = false,							--draw a rectangular frame
+    draw_graph_borders = false, 			--frame around the graph
+    border_width = 0, 								--thickness of the fame
+
+-- Text settings --
+    use_xft = true, 								  --antialiasing
+    font = 'Ubuntu:size=7',          	--default font type
+    color0 = '39c9c4',								--predetermined color
+    color1 = 'd59704',
+    color2 = '794e64',
+
+    lua_load = '~/.conky/lua/cpubar.lua',     --path to .lua file
+    lua_draw_hook_post = 'main_bars',
+
+};
+
+conky.text = [[
+${voffset 25}${color0}${font size:18}${goto 160}Core 1${goto 470}Core 2${goto 760}Core 3${goto 1060}Core 4
+${font :size=7}${goto 80}${execi 1000 cat /proc/cpuinfo | grep 'model name' | sed -e 's/model name.*: //'| uniq | cut -c 1-47}${goto 385}${execi 1000 cat /proc/cpuinfo | grep 'model name' | sed -e 's/model name.*: //'| uniq | cut -c 1-47}${goto 680}${execi 1000 cat /proc/cpuinfo | grep 'model name' | sed -e 's/model name.*: //'| uniq | cut -c 1-47}${goto 980}${execi 1000 cat /proc/cpuinfo | grep 'model name' | sed -e 's/model name.*: //'| uniq | cut -c 1-47}
+]];

@@ -1,0 +1,51 @@
+conky.config = {
+-- Conky settings --
+    update_interval = 1,							--update time in seconds
+    background = true,								--translucent background
+    cpu_avg_samples = 2,							--cpu for more accurate monitoring
+    net_avg_samples = 2,							--internet tighter monitoing
+    diskio_avg_samples = 2, 						--drive for more accurate monitoring
+    override_utf8_locale = true,					--overrides character encoding
+    double_buffer = true,							--reduces flicker
+    no_buffers  = true,
+    text_buffer_size = 256, 						--text buffer size
+    imlib_cache_size = 10,
+    max_user_text = 15000,
+    format_human_readable = true,					--units in non-bytes
+
+-- Window specifications --
+    own_window = true,  							--turn on your own window settings
+    own_window_type = 'normal',   					--window types, override = window manager rules do not apply, desktop = unedited panel = always top, dock = always over, normal = normal
+    own_window_transparent = false,  				--conky window becomes translucent
+    own_window_argb_visual = true,  				--transparent window
+    own_window_argb_value = 0,      				--Degree of transparency 0-255
+    own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager', 	--window properties below = skip_taskbar = ignore tray undecorated = remove frame and buttons override = window manager override sticky = all workspaces
+    own_window_title = 'circle_anim',
+    minimum_width = 730,        					--minimum width
+    minimum_height = 250, 							--minimum height
+    alignment = 'top_left', 						--top right corner
+    gap_x = 500,   								    --x direction shitf
+    gap_y = 360, 								    --y direction shift
+
+-- Graphics settings --
+    draw_shades = false, 							--text shading
+    draw_outline = false,							--draw around
+    draw_borders = false,							--draw a rectangular frame
+    draw_graph_borders = false, 					--frame around the graph
+    border_width = 0, 								--thickness of the fram
+
+-- Text settings --
+    use_xft = true, 								--antialiasing
+    font = 'Ubuntu:size=7',          				--default font typr
+    color0 = '39c9c4',								--preset color
+    color1 = 'd59704',
+    color2 = '794e64',
+
+    lua_load = '~/.conky/lua/circle_anim.lua',    --path to.lua file
+    lua_draw_hook_pre = 'main',
+
+};
+
+conky.text = [[
+
+]];

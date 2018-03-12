@@ -1,0 +1,62 @@
+conky.config = {
+-- Conky settings --
+    update_interval = 1,							--update time in seconds
+    background = true,								--translucent background
+    cpu_avg_samples = 2,							--cpu for more accurate monitoring
+    net_avg_samples = 2,							--internet for accurate monitoring
+    diskio_avg_samples = 2, 						--drive for more accurate monitorinmg
+    override_utf8_locale = true,					--overrides character encoding
+    double_buffer = true,							--reduces frame flicker
+    no_buffers  = true,
+    text_buffer_size = 256, 						--text buffer size
+    imlib_cache_size = 10,
+    max_user_text = 15000,
+    format_human_readable = true,					--units in non-bytes
+
+  -- Window specifications --
+      own_window = true,  							--turn onm your own window settings
+      own_window_type = 'normal',   					--window types, override = window manager rules do not apply, desktop = unedited panel = always top, dock = always over, normal = normal
+      own_window_transparent = false,  				--conky window becomes transparent
+      own_window_argb_visual = true,  				--trsansparent window
+      own_window_argb_value = 0,      				--degree of transparency 0-255
+      own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager', 	--window properties below = skip_taskbar = ignore tray undecorated = remove frame and buttons override = window manager override sticky = all workspaces
+      own_window_title = 'mem',
+      minimum_width = 1680,        					--minimum width
+      minimum_height = 280, 							--minimum height
+      alignment = 'top_left', 						--top right corner
+      gap_x = 30,   								    --x direction shift
+      gap_y = 345, 								    --y direction shift
+
+  -- Graphics settings --
+      draw_shades = false, 							--test shading
+      draw_outline = false,							--draw around
+      draw_borders = false,							--draw a rectangular frame
+      draw_graph_borders = false, 					--frame around the graph
+      border_width = 0, 								--thickness of the fame
+
+-- Text settings --
+    use_xft = true, 								--antialiasing
+    font = 'Ubuntu:size=7',          				--default font type
+    color0 = '39c9c4',								--predetermined color
+    color1 = 'd59704',
+    color2 = '794e64',
+
+    lua_load = '~/.conky/lua/mem.lua',    --path to .lua file
+    lua_draw_hook_pre = 'main_bars',
+
+};
+
+conky.text = [[
+${image ~/.conky/images/mem.png -p 0,0}
+${if_updatenr 1}${image ~/.conky/images/anim2/an01.png -p 35,39 -s 100x200}${endif}${if_updatenr 2}${image ~/.conky/images/anim2/an02.png -p 35,39 -s 100x200}${endif}${if_updatenr 3}${image ~/.conky/images/anim2/an03.png -p 35,39 -s 100x200}${endif}${if_updatenr 4}${image ~/.conky/images/anim2/an04.png -p 35,39 -s 100x200}${endif}${if_updatenr 5}${image ~/.conky/images/anim2/an05.png -p 35,39 -s 100x200}${endif}
+${if_updatenr 6}${image ~/.conky/images/anim2/an06.png -p 35,39 -s 100x200}${endif}${if_updatenr 7}${image ~/.conky/images/anim2/an07.png -p 35,39 -s 100x200}${endif}${if_updatenr 8}${image ~/.conky/images/anim2/an08.png -p 35,39 -s 100x200}${endif}${if_updatenr 9}${image ~/.conky/images/anim2/an09.png -p 35,39 -s 100x200}${endif}${if_updatenr 10}${image ~/.conky/images/anim2/an10.png -p 35,39 -s 100x200}${endif}
+${if_updatenr 11}${image ~/.conky/images/anim2/an11.png -p 35,39 -s 100x200}${endif}${if_updatenr 12}${image ~/.conky/images/anim2/an12.png -p 35,39 -s 100x200}${endif}${if_updatenr 13}${image ~/.conky/images/anim2/an13.png -p 35,39 -s 100x200}${endif}${if_updatenr 14}${image ~/.conky/images/anim2/an14.png -p 35,39 -s 100x200}${endif}${if_updatenr 15}${image ~/.conky/images/anim2/an15.png -p 35,39 -s 100x200}${endif}${if_updatenr 16}${image ~/.conky/images/anim2/an16.png -p 35,39 -s 100x200}${endif}${if_updatenr 17}${image ~/.conky/images/anim2/an17.png -p 35,39 -s 100x200}${endif}${if_updatenr 18}${image ~/.conky/images/anim2/an18.png -p 35,39 -s 100x200}${endif}${if_updatenr 19}${image ~/.conky/images/anim2/an19.png -p 35,39 -s 100x200}${endif}${if_updatenr 20}${image ~/.conky/images/anim2/an20.png -p 35,39 -s 100x200}${endif}
+${if_updatenr 21}${image ~/.conky/images/anim2/an21.png -p 35,39 -s 100x200}${endif}${if_updatenr 22}${image ~/.conky/images/anim2/an22.png -p 35,39 -s 100x200}${endif}
+${goto 300}${voffset 37}Used${goto 350}Free
+${image ~/.conky/images/separator-h-2.png -p 257,110 -s 130x1}
+${voffset 5}${goto 260}Ram${goto 300}${mem}${goto 350}${memeasyfree}
+${voffset 5}${goto 260}Swap${goto 300}${swap}${goto 350}${swapfree}
+${image ~/.conky/images/separator-h-2.png -p 257,155 -s 130x1}
+${voffset 61}${goto 185}Ram${goto 225}Swap
+${font :size=6}${voffset -1}${goto 175}${memmax}${goto 220}${swapmax}
+]];

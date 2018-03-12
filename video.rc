@@ -1,0 +1,58 @@
+conky.config = {
+-- Conky settings --
+    update_interval = 1,							--update time in seconds
+    background = true,								--translucent background
+    cpu_avg_samples = 2,							--cpu for more accurate monitoring
+    net_avg_samples = 2,							--internet for accurate monitoring
+    diskio_avg_samples = 2, 						--drive for more accurate monitorinmg
+    override_utf8_locale = true,					--overrides character encoding
+    double_buffer = true,							--reduces frame flicker
+    no_buffers  = true,
+    text_buffer_size = 256, 						--text buffer size
+    imlib_cache_size = 10,
+    max_user_text = 15000,
+    format_human_readable = true,					--units in non-bytes
+
+-- Window specifications --
+    own_window = true,  							--turn onm your own window settings
+    own_window_type = 'normal',   					--window types, override = window manager rules do not apply, desktop = unedited panel = always top, dock = always over, normal = normal
+    own_window_transparent = false,  				--conky window becomes transparent
+    own_window_argb_visual = true,  				--trsansparent window
+    own_window_argb_value = 0,      				--degree of transparency 0-255
+    own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager', 	--window properties below = skip_taskbar = ignore tray undecorated = remove frame and buttons override = window manager override sticky = all workspaces
+    own_window_title = 'video',
+    minimum_width = 512,        					--minimum width
+    minimum_height = 301, 							--minimum height
+    alignment = 'top_left', 						--top right corner
+    gap_x = 280,   								    --x direction shift
+    gap_y = 30, 								    --y direction shift
+
+-- Graphics settings --
+    draw_shades = false, 							--test shading
+    draw_outline = false,							--draw around
+    draw_borders = false,							--draw a rectangular frame
+    draw_graph_borders = false, 					--frame around the graph
+    border_width = 0, 								--thickness of the fame
+
+-- Text settings --
+    use_xft = true, 								--antialiasing
+    font = 'Ubuntu:size=7',          				--default font type
+    color0 = '39c9c4',								--predetermined color
+    color1 = 'd59704',
+    color2 = '794e64',
+
+    template1 = '~/.conky/images/anim3/frame-',   --path the .lua file
+    template2 = '-p 9,12',
+
+};
+
+conky.text = [[
+${image ~/.conky/images/video.png -p 0,0}
+${if_updatenr 01}${image ${template1}0001.png ${template2}}${endif}${if_updatenr 02}${image ${template1}0016.png ${template2}}${endif}${if_updatenr 03}${image ${template1}0031.png ${template2}}${endif}${if_updatenr 04}${image ${template1}0046.png ${template2}}${endif}${if_updatenr 05}${image ${template1}0061.png ${template2}}${endif}${if_updatenr 06}${image ${template1}0076.png ${template2}}${endif}${if_updatenr 07}${image ${template1}0091.png ${template2}}${endif}${if_updatenr 08}${image ${template1}0106.png ${template2}}${endif}${if_updatenr 09}${image ${template1}0121.png ${template2}}${endif}${if_updatenr 10}${image ${template1}0136.png ${template2}}${endif}
+${if_updatenr 11}${image ${template1}0151.png ${template2}}${endif}${if_updatenr 12}${image ${template1}0166.png ${template2}}${endif}${if_updatenr 13}${image ${template1}0181.png ${template2}}${endif}${if_updatenr 14}${image ${template1}0196.png ${template2}}${endif}${if_updatenr 15}${image ${template1}0211.png ${template2}}${endif}${if_updatenr 16}${image ${template1}0226.png ${template2}}${endif}${if_updatenr 17}${image ${template1}0241.png ${template2}}${endif}${if_updatenr 18}${image ${template1}0256.png ${template2}}${endif}${if_updatenr 19}${image ${template1}0271.png ${template2}}${endif}${if_updatenr 20}${image ${template1}0286.png ${template2}}${endif}
+${if_updatenr 21}${image ${template1}0301.png ${template2}}${endif}${if_updatenr 22}${image ${template1}0316.png ${template2}}${endif}${if_updatenr 23}${image ${template1}0331.png ${template2}}${endif}${if_updatenr 24}${image ${template1}0346.png ${template2}}${endif}${if_updatenr 25}${image ${template1}0361.png ${template2}}${endif}${if_updatenr 26}${image ${template1}0376.png ${template2}}${endif}${if_updatenr 27}${image ${template1}0391.png ${template2}}${endif}${if_updatenr 28}${image ${template1}0406.png ${template2}}${endif}${if_updatenr 29}${image ${template1}0421.png ${template2}}${endif}${if_updatenr 30}${image ${template1}0436.png ${template2}}${endif}
+${if_updatenr 31}${image ${template1}0451.png ${template2}}${endif}${if_updatenr 32}${image ${template1}0466.png ${template2}}${endif}${if_updatenr 33}${image ${template1}0481.png ${template2}}${endif}${if_updatenr 34}${image ${template1}0496.png ${template2}}${endif}${if_updatenr 35}${image ${template1}0511.png ${template2}}${endif}${if_updatenr 36}${image ${template1}0526.png ${template2}}${endif}${if_updatenr 37}${image ${template1}0541.png ${template2}}${endif}${if_updatenr 38}${image ${template1}0556.png ${template2}}${endif}${if_updatenr 39}${image ${template1}0571.png ${template2}}${endif}${if_updatenr 40}${image ${template1}0586.png ${template2}}${endif}
+${if_updatenr 41}${image ${template1}0601.png ${template2}}${endif}${if_updatenr 42}${image ${template1}0616.png ${template2}}${endif}${if_updatenr 43}${image ${template1}0631.png ${template2}}${endif}${if_updatenr 44}${image ${template1}0646.png ${template2}}${endif}${if_updatenr 45}${image ${template1}0661.png ${template2}}${endif}${if_updatenr 46}${image ${template1}0676.png ${template2}}${endif}${if_updatenr 47}${image ${template1}0691.png ${template2}}${endif}${if_updatenr 48}${image ${template1}0706.png ${template2}}${endif}${if_updatenr 49}${image ${template1}0721.png ${template2}}${endif}${if_updatenr 50}${image ${template1}0736.png ${template2}}${endif}
+${if_updatenr 51}${image ${template1}0751.png ${template2}}${endif}${if_updatenr 52}${image ${template1}0766.png ${template2}}${endif}${if_updatenr 53}${image ${template1}0781.png ${template2}}${endif}${if_updatenr 54}${image ${template1}0796.png ${template2}}${endif}${if_updatenr 55}${image ${template1}0811.png ${template2}}${endif}${if_updatenr 56}${image ${template1}0826.png ${template2}}${endif}${if_updatenr 57}${image ${template1}0841.png ${template2}}${endif}${if_updatenr 58}${image ${template1}0856.png ${template2}}${endif}${if_updatenr 59}${image ${template1}0871.png ${template2}}${endif}${if_updatenr 60}${image ${template1}0886.png ${template2}}${endif}
+${if_updatenr 61}${image ${template1}0901.png ${template2}}${endif}${if_updatenr 62}${image ${template1}0916.png ${template2}}${endif}${if_updatenr 63}${image ${template1}0931.png ${template2}}${endif}${if_updatenr 64}${image ${template1}0946.png ${template2}}${endif}${if_updatenr 65}${image ${template1}0961.png ${template2}}${endif}${if_updatenr 66}${image ${template1}0976.png ${template2}}${endif}${if_updatenr 67}${image ${template1}0991.png ${template2}}${endif}${if_updatenr 68}${image ${template1}1006.png ${template2}}${endif}${if_updatenr 69}${image ${template1}1021.png ${template2}}${endif}${if_updatenr 70}${image ${template1}1036.png ${template2}}${endif}
+]];

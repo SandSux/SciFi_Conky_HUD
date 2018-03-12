@@ -1,0 +1,64 @@
+conky.config = {
+-- Conky settings --
+    update_interval = 1,							--update time in seconds
+    background = true,								--translucent background
+    cpu_avg_samples = 2,							--cpu for more accurate monitorimg
+    net_avg_samples = 2,							--internet more accurate monitoring
+    diskio_avg_samples = 2, 						--drive for more accurate monitoring
+    override_utf8_locale = true,					--overrides character encoding
+    double_buffer = true,							--reduces frame flicker
+    no_buffers  = true,
+    text_buffer_size = 256, 						--text buffer size
+    imlib_cache_size = 10,
+    max_user_text = 15000,
+    format_human_readable = true,					--units in non-bytes
+
+-- Window specifications --
+    own_window = true,  							--turn on your own window setings
+    own_window_type = 'normal',   					--window types, override = window manager rules do not apply, desktop = unedited panel = always top, dock = always over, normal = normal
+    own_window_transparent = false,  				--conky window becomes transparent
+    own_window_argb_visual = true,  				--transparent Window
+    own_window_argb_value = 0,      				--degree of transparency 0-255
+    own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager', 	--window properties below = skip_taskbar = ignore tray undecorated = remove frame and buttons override = window manager override sticky = all workspaces
+    own_window_title = 'hdd',
+    minimum_width = 359,        					--minimum width
+    minimum_height = 204, 							--minimum height
+    alignment = 'top_left', 						--top right corner
+    gap_x = 1320,   								    --x direction shift
+    gap_y = 382, 								    --y direction shift
+
+-- Graphics settings --
+    draw_shades = false, 							--text shading
+    draw_outline = false,							--draw around
+    draw_borders = false,							--draw a rectangular frame
+    draw_graph_borders = false, 					--frame around the graph
+    border_width = 0, 								--thickness of the frame
+
+-- Text settings --
+    use_xft = true, 								--antialiasing
+    font = 'Ubuntu:size=7',          				--default font type
+    color0 = '39c9c4',								--predetermined color
+    color1 = 'd59704',
+    color2 = '794e64',
+
+    lua_load = '~/.conky/lua/hdd.lua',    --path to .lua file
+    lua_draw_hook_pre = 'main_bars',
+
+};
+
+conky.text = [[
+${if_updatenr 1}${image ~/.conky/images/anim2/an01.png -p 0,2 -s 100x200}${endif}${if_updatenr 2}${image ~/.conky/images/anim2/an02.png -p 0,2 -s 100x200}${endif}${if_updatenr 3}${image ~/.conky/images/anim2/an03.png -p 0,2 -s 100x200}${endif}${if_updatenr 4}${image ~/.conky/images/anim2/an04.png -p 0,2 -s 100x200}${endif}${if_updatenr 5}${image ~/.conky/images/anim2/an05.png -p 0,2 -s 100x200}${endif}
+${if_updatenr 6}${image ~/.conky/images/anim2/an06.png -p 0,2 -s 100x200}${endif}${if_updatenr 7}${image ~/.conky/images/anim2/an07.png -p 0,2 -s 100x200}${endif}${if_updatenr 8}${image ~/.conky/images/anim2/an08.png -p 0,2 -s 100x200}${endif}${if_updatenr 9}${image ~/.conky/images/anim2/an09.png -p 0,2 -s 100x200}${endif}${if_updatenr 10}${image ~/.conky/images/anim2/an10.png -p 0,2 -s 100x200}${endif}
+${if_updatenr 11}${image ~/.conky/images/anim2/an11.png -p 0,2 -s 100x200}${endif}${if_updatenr 12}${image ~/.conky/images/anim2/an12.png -p 0,2 -s 100x200}${endif}${if_updatenr 13}${image ~/.conky/images/anim2/an13.png -p 0,2 -s 100x200}${endif}${if_updatenr 14}${image ~/.conky/images/anim2/an14.png -p 0,2 -s 100x200}${endif}${if_updatenr 15}${image ~/.conky/images/anim2/an15.png -p 0,2 -s 100x200}${endif}${if_updatenr 16}${image ~/.conky/images/anim2/an16.png -p 0,2 -s 100x200}${endif}${if_updatenr 17}${image ~/.conky/images/anim2/an17.png -p 0,2 -s 100x200}${endif}${if_updatenr 18}${image ~/.conky/images/anim2/an18.png -p 0,2 -s 100x200}${endif}${if_updatenr 19}${image ~/.conky/images/anim2/an19.png -p 0,2 -s 100x200}${endif}${if_updatenr 20}${image ~/.conky/images/anim2/an20.png -p 0,2 -s 100x200}${endif}
+${if_updatenr 21}${image ~/.conky/images/anim2/an21.png -p 0,2 -s 100x200}${endif}${if_updatenr 22}${image ~/.conky/images/anim2/an22.png -p 0,2 -s 100x200}${endif}
+${voffset -37}${alignc}sda: WD Green M.2 2280 SSD ${color2}${execi 10 hddtemp /dev/sda |cut -c35-39}${color}
+${alignc}sdb: Hitachi Travelstar 7K1000 ${color2}${execi 10 hddtemp /dev/sdb |cut -c33-37}
+${color}${goto 280}${voffset 30}Used${alignr 15}Free
+${image ~/.conky/images/separator-h-2.png -p 237,70 -s 115x1}
+${goto 240}Root${goto 275}${fs_used /}${alignr 10}${fs_free /}
+${goto 240}${voffset 5}Home${goto 275}${fs_used /home/met}${alignr 10}${fs_free /home/met}
+${goto 240}${voffset 5}Data${goto 275}${fs_used /media/met/Data/}${alignr 10}${fs_free /media/met/Data/}
+${image ~/.conky/images/separator-h-2.png -p 237,130 -s 115x1}
+${voffset 45}${goto 130}root${goto 167}home${goto 209}data
+${font :size=6}${goto 120}${fs_size /}${goto 165}${fs_size /home/met}${goto 210}${fs_size /media/met/Data/}
+]];

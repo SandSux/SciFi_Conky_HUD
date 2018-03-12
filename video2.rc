@@ -1,0 +1,72 @@
+conky.config = {
+-- Conky settings --
+    update_interval = 0.2,							--update time in seconds
+    background = true,								--translucent background
+    cpu_avg_samples = 2,							--cpu for more accurate monitoring
+    net_avg_samples = 2,							--internet for accurate monitoring
+    diskio_avg_samples = 2, 						--drive for more accurate monitorinmg
+    override_utf8_locale = true,					--overrides character encoding
+    double_buffer = true,							--reduces frame flicker
+    no_buffers  = true,
+    text_buffer_size = 256, 						--text buffer size
+    imlib_cache_size = 10,
+    max_user_text = 15000,
+    format_human_readable = true,					--units in non-bytes
+
+-- Window specifications --
+    own_window = true,  							--turn onm your own window settings
+    own_window_type = 'normal',   					--window types, override = window manager rules do not apply, desktop = unedited panel = always top, dock = always over, normal = normal
+    own_window_transparent = false,  				--conky window becomes transparent
+    own_window_argb_visual = true,  				--trsansparent window
+    own_window_argb_value = 0,      				--degree of transparency 0-255
+    own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager', 	--window properties below = skip_taskbar = ignore tray undecorated = remove frame and buttons override = window manager override sticky = all workspaces
+    own_window_title = 'video2',
+    minimum_width = 730,        					--minimum width
+    minimum_height = 250, 							--minimum height
+    alignment = 'top_left', 						--top right corner
+    gap_x = 500,   								    --x direction shift
+    gap_y = 360, 								    --y direction shift
+
+-- Graphics settings --
+    draw_shades = false, 							--test shading
+    draw_outline = false,							--draw around
+    draw_borders = false,							--draw a rectangular frame
+    draw_graph_borders = false, 					--frame around the graph
+    border_width = 0, 								--thickness of the fame
+
+-- Text settings --
+    use_xft = true, 								--antialiasing
+    font = 'Ubuntu:size=7',          				--default font type
+    color0 = '39c9c4',								--predetermined color
+    color1 = 'd59704',
+    color2 = '794e64',
+
+
+};
+
+conky.text = [[
+${if_updatenr 01}${image ~/.conky/images/anim4/11.png -s 210x210 -p 0,20}${endif}
+${if_updatenr 02}${image ~/.conky/images/anim4/12.png -s 210x210 -p 0,20}${endif}
+${if_updatenr 03}${image ~/.conky/images/anim4/13.png -s 210x210 -p 0,20}${endif}
+${if_updatenr 04}${image ~/.conky/images/anim4/14.png -s 210x210 -p 0,20}${endif}
+${if_updatenr 05}${image ~/.conky/images/anim4/15.png -s 210x210 -p 0,20}${endif}
+${if_updatenr 06}${image ~/.conky/images/anim4/16.png -s 210x210 -p 0,20}${endif}
+${if_updatenr 07}${image ~/.conky/images/anim4/17.png -s 210x210 -p 0,20}${endif}
+${if_updatenr 08}${image ~/.conky/images/anim4/18.png -s 210x210 -p 0,20}${endif}
+${if_updatenr 01}${image ~/.conky/images/anim4/01.png -s 250x250 -p 240,0}${endif}
+${if_updatenr 02}${image ~/.conky/images/anim4/02.png -s 250x250 -p 240,0}${endif}
+${if_updatenr 03}${image ~/.conky/images/anim4/03.png -s 250x250 -p 240,0}${endif}
+${if_updatenr 04}${image ~/.conky/images/anim4/04.png -s 250x250 -p 240,0}${endif}
+${if_updatenr 05}${image ~/.conky/images/anim4/05.png -s 250x250 -p 240,0}${endif}
+${if_updatenr 06}${image ~/.conky/images/anim4/06.png -s 250x250 -p 240,0}${endif}
+${if_updatenr 07}${image ~/.conky/images/anim4/07.png -s 250x250 -p 240,0}${endif}
+${if_updatenr 08}${image ~/.conky/images/anim4/08.png -s 250x250 -p 240,0}${endif}
+${if_updatenr 01}${image ~/.conky/images/anim4/11.png -s 210x210 -p 520,20}${endif}
+${if_updatenr 02}${image ~/.conky/images/anim4/12.png -s 210x210 -p 520,20}${endif}
+${if_updatenr 03}${image ~/.conky/images/anim4/13.png -s 210x210 -p 520,20}${endif}
+${if_updatenr 04}${image ~/.conky/images/anim4/14.png -s 210x210 -p 520,20}${endif}
+${if_updatenr 05}${image ~/.conky/images/anim4/15.png -s 210x210 -p 520,20}${endif}
+${if_updatenr 06}${image ~/.conky/images/anim4/16.png -s 210x210 -p 520,20}${endif}
+${if_updatenr 07}${image ~/.conky/images/anim4/17.png -s 210x210 -p 520,20}${endif}
+${if_updatenr 08}${image ~/.conky/images/anim4/18.png -s 210x210 -p 520,20}${endif}
+]];

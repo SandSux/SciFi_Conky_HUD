@@ -1,0 +1,105 @@
+conky.config = {
+-- Conky settings --
+    update_interval = 5,
+    background = true,
+    cpu_avg_samples = 2,
+    net_avg_samples = 2,
+    diskio_avg_samples = 2,
+    override_utf8_locale = true,
+    double_buffer = true,
+    no_buffers  = true,
+    text_buffer_size = 256,
+    imlib_cache_size = 10,
+    max_user_text = 15000,
+    format_human_readable = true,
+
+-- Window specifications --
+    own_window = true,
+    own_window_type = 'normal',
+    own_window_transparent = false,
+    own_window_argb_visual = true,
+    own_window_argb_value = 0,
+    own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager',
+    own_window_title = 'weather',
+    minimum_width = 512,
+    minimum_height = 290,
+    alignment = 'top_left',
+    gap_x = 810,
+    gap_y = 40,
+
+-- Graphics settings --
+    draw_shades = false,
+    draw_outline = false,
+    draw_borders = false,
+    draw_graph_borders = false,
+    border_width = 0,
+
+-- Text settings --
+    use_xft = true,
+    font = 'Ubuntu:size=7',
+    color0 = '39c9c4',
+    color1 = 'd59704',
+    color2 = '794e64',
+
+
+    -------------------------------------
+--  API Key
+-------------------------------------
+template6="<YOUR_OPEN_WEATHER_MAP_API_KEY>",
+
+
+-------------------------------------
+--  City ID
+-------------------------------------
+template7="<YOUR_CITY_ID>",
+
+
+-------------------------------------
+--  Temp Unit (default, metric, imperial)
+-------------------------------------
+template8="<TEMP_UNIT>",
+
+
+-------------------------------------
+--  Locale (e.g. "es_ES.UTF-8")
+--  Leave empty for default
+-------------------------------------
+template9="en_US.UTF-8"         --character encoding protocol - chsnged from Hungarian HG set to em_US
+
+};
+
+conky.text = [[
+${image ~/.conky/images/weather1.png -p 0,0}
+${execi 300 l=${template9}; l=${l%%_*}; curl -s "api.openweathermap.org/data/2.5/forecast?APPID=${template6}&id=${template7}&cnt=5&units=${template8}&lang=$l" -o ~/.cache/forecast.json}\
+${execi 300 l=${template9}; l=${l%%_*}; curl -s "api.openweathermap.org/data/2.5/weather?APPID=${template6}&id=${template7}&cnt=5&units=${template8}&lang=$l" -o ~/.cache/weather.json}\
+#város, állapot
+${goto 22}${voffset 7}${font :size=16}${color1}${execi 300 jq -r ".name" ~/.cache/weather.json}, ${font :size=12}${execi 300 jq -r .weather[0].description ~/.cache/weather.json | sed 's|\<.|\U&|g'}
+#aktuális hőmérséklet
+${goto 30}${voffset 4}${font :size=36}${execi 300 jq -r .main.temp ~/.cache/weather.json | awk '{print int($1+0.5)}' # round num}°\
+${font}
+#minimum, maximum
+${goto 140}${voffset -45}${font :size=12}min: ${execi 300 jq ".list[0].temp.min" ~/.cache/forecast.json | awk '{print int($1+0.5)}'}°
+${goto 140}max: ${execi 300 jq ".list[0].temp.max" ~/.cache/forecast.json | awk '{print int($1+0.5)}'}°
+#aktuális ikon
+${execi 300 cp -f ~/.conky/weather/$(jq .list[0].weather[0].id ~/.cache/forecast.json).png ~/.cache/weather-1.png}${image ~/.cache/weather-1.png -p 250,40 -s 120x72}\
+${alignr 20}${voffset -60}${font :size=8}${execi 300 jq -r .main.pressure ~/.cache/weather.json | awk '{print int($1+0.5)}' # round num} hPa
+${alignr 20}${voffset 7}${execi 300 jq -r .main.humidity ~/.cache/weather.json | awk '{print int($1+0.5)}' # round num} %
+${alignr 20}${voffset 7}${execi 300 jq -r .wind.speed ~/.cache/weather.json | awk '{print int($1+0.5)}' # round num}${if_match "$template8" == "metric"} m/s${else}${if_match "$template8" == "default"} m/s${else}${if_match "$template8" == "imperial"} mi/h${endif}${endif}${endif}${color}
+\
+${voffset 100}\
+${goto 24}${execi 300 LANG=${template9} LC_TIME=${template9} date -d +1day +%^A}\
+${goto 152}${execi 300 LANG=${template9} LC_TIME=${template9} date -d +2days +%^A}\
+${goto 280}${execi 300 LANG=${template9} LC_TIME=${template9} date -d +3days +%^A}\
+${goto 408}${execi 300 LANG=${template9} LC_TIME=${template9} date -d +4days +%^A}\
+\
+${voffset 20}\
+${goto 34}${execi 300 jq .list[1].temp.max ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°F / ${execi 300 jq .list[1].temp.min ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°F\
+${goto 162}${execi 300 jq .list[2].temp.max ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°F / ${execi 300 jq .list[2].temp.min ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°F\
+${goto 290}${execi 300 jq .list[3].temp.max ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°F / ${execi 300 jq .list[3].temp.min ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°F\
+${goto 418}${execi 300 jq .list[4].temp.max ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°F / ${execi 300 jq .list[4].temp.min ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°F\
+\
+${execi 300 cp -f ~/.conky/weather/$(jq .list[1].weather[0].id ~/.cache/forecast.json).png ~/.cache/forecast-1.png}${image ~/.cache/forecast-1.png -p 24,230 -s 80x48}\
+${execi 300 cp -f ~/.conky/weather/$(jq .list[2].weather[0].id ~/.cache/forecast.json).png ~/.cache/forecast-2.png}${image ~/.cache/forecast-2.png -p 152,230 -s 80x48}\
+${execi 300 cp -f ~/.conky/weather/$(jq .list[3].weather[0].id ~/.cache/forecast.json).png ~/.cache/forecast-3.png}${image ~/.cache/forecast-3.png -p 280,230 -s 80x48}\
+${execi 300 cp -f ~/.conky/weather/$(jq .list[4].weather[0].id ~/.cache/forecast.json).png ~/.cache/forecast-4.png}${image ~/.cache/forecast-4.png -p 408,230 -s 80x48}\
+]];

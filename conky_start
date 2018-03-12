@@ -1,0 +1,17 @@
+#!/bin/bash
+
+sleep 1
+conky -c ~/.conky/user.rc &
+conky -c ~/.conky/video.rc &
+conky -c ~/.conky/weather.rc &
+conky -c ~/.conky/net.rc &
+sleep 2
+conky -c ~/.conky/mem.rc &
+conky -c ~/.conky/hdd.rc &
+conky -c ~/.conky/circle_anim.rc &
+conky -c ~/.conky/info.rc &
+sleep 2
+conky -c ~/.conky/process.rc &
+conky -c ~/.conky/cpubar.rc &
+conky -c ~/.conky/cpu.rc &
+exit
