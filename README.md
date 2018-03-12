@@ -71,7 +71,7 @@ In order to populate neccessary sensor data and achieve functionality with this 
 
 ## Configuration
 
-1. Acquire this repository: `git clone` 
+1. Acquire this repository: `git clone https://github.com/SandSux/SciFi_Conky_HUD.git` 
 
 2. We need to relocate all of our conky files from this repo into a folder called `.conky` (The period indicates that this is a hidden file). 
     + Create a directory in your home folder so that all of the paths in the configuration files link the .lua, .png, etc.         files correctly 
@@ -101,8 +101,8 @@ In order to populate neccessary sensor data and achieve functionality with this 
     
 6. Open weather.rc and enter your openweathermap API key and your City_ID
 
-7. **Autorun at startup**
-   - Commands cn be run at login by placing a launcher in the `~/.config/autostart`
+7. Autorun at start:
+   - Commands can be run at login by placing a launcher in the `~/.config/autostart` or by adding an entry to your `Startup Applications`gui
     
 **Changes**
 + Compiled documentation and wrote README.md
