@@ -2,15 +2,13 @@
 
 Conky is a free system monitor tool for the X window system on Linux. It is able to monitor many system varaibles including CPU status, swap space, temperatures, disk usage, processes, network interfaces, battery status and a slew of others and then display the information on your desktop. It is also capable of displaying time, calendars, weather and more.
 
-I cannot take full credit for this configuration. this beautiful config was written by a Hungarian developer see "Contributors" below.
+I cannot take full credit for this configuration. This beautiful config was written by a Hungarian developer; see "Contributors" section below for link to original file).
 
 You can grab [the latest release from github](https://github.com/brndnmtthws/conky/releases/latest)
 
-## Screenshots
+## Screenshot
 
 ![screen](https://user-images.githubusercontent.com/26425982/37259259-59794b1e-255a-11e8-9541-6cd5de5cd543.png)
-
-![openweathermap_screen](https://user-images.githubusercontent.com/26425982/37260065-30a48338-2565-11e8-98be-c9174c022775.png)
 
 ## Documentation
 
@@ -28,10 +26,10 @@ Next, we need to install a few dependencies that did not come with our 'conky-al
 
 ## Dependencies
 
-    + Conky with LUA support and Cairo bindings.
-    + Openweathermap API Key
-    + jq
-    + lm-sensors
+    - Conky with LUA support and Cairo bindings.
+    - Openweathermap API Key
+    - jq
+    - lm-sensors
 
 **Install JQ**
 
@@ -76,13 +74,15 @@ In order to populate neccessary sensor data and achieve functionality with this 
 
 1. Openweathermap API - visit [OpenWeatherMap](https://openweathermap.org/api) to sign up for your API key
 
-  + You will also need to find your City_ID  [here](http://openweathermap.org/help/city_list.txt). (Use [ctl-f] to search page)
+ ![openweathermap_screen](https://user-images.githubusercontent.com/26425982/37260065-30a48338-2565-11e8-98be-c9174c022775.png)
+ 
+ + You will also need to find your City_ID [here](http://openweathermap.org/help/city_list.txt). (Use [ctl-f] to search page) or the included `city_list.txt` file.
   
 2. We need to put all of our conky files from this repo in a folder called `.conky` (The period indicates that this is a hidden file) so create a directory in your home folder so that all the paths in the config files aren't broken.
 
        `mkdir /.conky`
 
-    - Note: [ctrl + h] toggles hidden files from view
+    - Note: [CTRL + h] toggles hidden files from view
 
 3. Included in this repo is a file named "conky_start" which we need to issue a `chmod` command to in order to make it executable 
 
@@ -110,7 +110,7 @@ For the weatherrc configuration, you are going to have to obtain an [API Key fro
 
 ## Contributors
 
-I found the original script on the [KDE Store](https://store.kde.org/p/1197920). It was written by a Hungarian developer who did a spectacular job, though there was no documentation or README file and the in-line information was written in Hungarian.
+I found the original script on the [KDE Store](https://store.kde.org/p/1197920). It was written by a Hungarian developer who did a spectacular job, though there was no documentation, README and all of the in-line information in the configs was written in Hungarian.
 
 
 ## License
