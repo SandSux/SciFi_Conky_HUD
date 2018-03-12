@@ -81,6 +81,10 @@ In order to populate more data and achieve more functionality with this script, 
 
       `chmod 755 conky_start`
       + be sure that you've put the conkly_start script in your path so you don't have to change directories or issue long          commands to start conky
+      
+3. Now conky can be started by issuing the command:
+    
+    `./conky_start`
 
 **Changes**
 + Compiled documentation and wrote README.md
