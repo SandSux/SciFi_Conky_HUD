@@ -30,11 +30,12 @@ Next, we need to install a few dependencies that did not come with our 'conky-al
 
     + Conky with LUA support and Cairo bindings.
     + Openweathermap API Key
+    + jq
+    + lm-sensors
 
 **Install JQ**
 
-JQ which is a lightweight, command line JSON processor. Though it can be installed via `sudo apt install jq` ; however, you will need to to inform your system where
-where to find jq. [More information](https://stedolan.github.io/jq/download/)
+JQ which is a lightweight, command line JSON processor. Though it can be installed via `sudo apt install jq` we will need to to inform your system on where to find jq by adding the appropriate repository to our `sources.list` file. [More information](https://stedolan.github.io/jq/download/)
 
 1. Open your `sources.list` file in your favorite text editor
 
@@ -54,7 +55,7 @@ where to find jq. [More information](https://stedolan.github.io/jq/download/)
 
 **Install & Configure lm-sensors**
 
-In order to populate more data and achieve more functionality with this script, we need to install and run lm-sensors
+In order to populate neccessary sensor data and achieve functionality with this script, we need to install and run lm-sensors
 
 1. Install lm-sensors on Ubuntu or Debian Linux
 
@@ -77,14 +78,26 @@ In order to populate more data and achieve more functionality with this script, 
 
   + You will also need to find your City_ID  [here](http://openweathermap.org/help/city_list.txt). (Use [ctl-f] to search page)
   
-2. Included in this repo is a file named "conky_start" which we need to issue a `chmod` command to in order to make it executable 
+2. We need to put all of our conky files from this repo in a folder called `.conky` (The period indicates that this is a hidden file) so create a directory in your home folder so that all the paths in the config files aren't broken.
+
+       `mkdir /.conky`
+
+    - Note: [ctrl + h] toggles hidden files from view
+
+3. Included in this repo is a file named "conky_start" which we need to issue a `chmod` command to in order to make it executable 
 
       `chmod 755 conky_start`
       + be sure that you've put the conky_start script in your path so you don't have to change directories or issue long          commands to start conky
       
-3. Now conky can be started by issuing the command:
+4. Now conky can be started by issuing the command:
     
     `./conky_start`
+    
+5. Next, some values need to be changed in a couple configuration files so that they reflect your system.
+    - Pick your favorite text editor and open the net.rc file. 
+    - Towards the bottom are a few lines where you will enter your wireless interface. You can run `ifconfig` to find out what your             wireless adaper is called. It will likely be wlan0 or something like wlp**0.
+    
+6. Open weather.rc and enter your openweathermap API key and your City_ID
 
 **Changes**
 + Compiled documentation and wrote README.md
