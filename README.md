@@ -80,7 +80,7 @@ In order to populate more data and achieve more functionality with this script, 
 2. Included in this repo is a file named "conky_start" which we need to issue a `chmod` command to in order to make it executable 
 
       `chmod 755 conky_start`
-      + be sure that you've put the conkly_start script in your path so you don't have to change directories or issue long          commands to start conky
+      + be sure that you've put the conky_start script in your path so you don't have to change directories or issue long          commands to start conky
       
 3. Now conky can be started by issuing the command:
     
