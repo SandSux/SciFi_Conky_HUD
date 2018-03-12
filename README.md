@@ -76,6 +76,11 @@ In order to populate more data and achieve more functionality with this script, 
 1. Openweathermap API - visit [OpenWeatherMap](https://openweathermap.org/api) to sign up for your API key
 
   + You will also need to find your City_ID  [here](http://openweathermap.org/help/city_list.txt). (Use [ctl-f] to search page)
+  
+2. Included in this repo is a file named "conky_start" which we need to issue a `chmod` command to in order to make it executable 
+
+      `chmod 755 conky_start`
+      + be sure that you've put the conkly_start script in your path so you don't have to change directories or issue long          commands to start conky
 
 **Changes**
 + Compiled documentation and wrote README.md
