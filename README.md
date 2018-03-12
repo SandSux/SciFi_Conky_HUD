@@ -33,7 +33,7 @@ Next, we need to install a few dependencies that did not come with our 'conky-al
 
 **Install JQ**
 
-JQ which is a lightweight, command line JSON processor. Though it can be installed via `sudo apt install jq` we will need to to inform your system on where to find jq by adding the appropriate repository to our `sources.list` file. [More information](https://stedolan.github.io/jq/download/)
+JQ is a lightweight, command line JSON processor. Though it can be installed via `sudo apt install jq` we will need to to inform your system as to where to find jq first by adding the appropriate repository to our `sources.list` file. [More information](https://stedolan.github.io/jq/download/)
 
 1. Open your `sources.list` file in your favorite text editor
 
@@ -59,7 +59,7 @@ In order to populate neccessary sensor data and achieve functionality with this 
 
   `sudo apt-get install lm-sensors`
 
-2. Next, run `sudo sensors-detect` to configure sensors, then follow the prompts by responding "yes" to all. At the end of detection, lm-sensors will write out all detected sensors so Conky can use the data. You can test this after configuration by running the command `sensors`
+2. Next, run `sudo sensors-detect` to configure sensors, then follow the prompts by responding "yes" to all. At the end of detection, lm-sensors will write out all detected sensors so that Conky can access the data. You can test the general function after configuration by running the command `sensors`
 
 3. Optional: Install Conky Manager (GUI tool for those who prefer not to work in the command line)
 
@@ -67,38 +67,43 @@ In order to populate neccessary sensor data and achieve functionality with this 
 
     + Update: `sudo apt update`
 
-    +  Install Conky Manager:
-      `sudo apt-get install conky-manager`
+    + Install Conky Manager: `sudo apt-get install conky-manager`
 
 ## Configuration
 
-1. Openweathermap API - visit [OpenWeatherMap](https://openweathermap.org/api) to sign up for your API key
+1. Acquire this repository: `git clone` 
 
- ![openweathermap_screen](https://user-images.githubusercontent.com/26425982/37260065-30a48338-2565-11e8-98be-c9174c022775.png)
- 
- + You will also need to find your City_ID [here](http://openweathermap.org/help/city_list.txt). (Use [ctl-f] to search page) or the included `city_list.txt` file.
-  
-2. We need to put all of our conky files from this repo in a folder called `.conky` (The period indicates that this is a hidden file) so create a directory in your home folder so that all the paths in the config files aren't broken.
+2. We need to relocate all of our conky files from this repo into a folder called `.conky` (The period indicates that this is a hidden file). 
+    + Create a directory in your home folder so that all of the paths in the configuration files link the .lua, .png, etc.         files correctly 
 
-       `mkdir /.conky`
+    + Make directory:`cd && sudo mkdir ~/.conky`
 
     - Note: [CTRL + h] toggles hidden files from view
 
+3. Openweathermap API - visit [OpenWeatherMap](https://openweathermap.org/api) to sign up for your API key
+
+ ![openweathermap_screen](https://user-images.githubusercontent.com/26425982/37260065-30a48338-2565-11e8-98be-c9174c022775.png)
+ 
+ + You will also need to find your City_ID [here](http://openweathermap.org/help/city_list.txt). (Use [CTRL+f] to search page) or use the included `city_list.txt` file (it's the same list as the linked one).
+  
 3. Included in this repo is a file named "conky_start" which we need to issue a `chmod` command to in order to make it executable 
 
       `chmod 755 conky_start`
-      + be sure that you've put the conky_start script in your path so you don't have to change directories or issue long          commands to start conky
+      + Move `conky-start' into you home directory (your path) so you it can be executed directly from the command line.
       
 4. Now conky can be started by issuing the command:
     
     `./conky_start`
     
-5. Next, some values need to be changed in a couple configuration files so that they reflect your system.
+5. Next, some values need to be changed in a couple configuration files so that they reflect your system hardware interfaces.
     - Pick your favorite text editor and open the net.rc file. 
-    - Towards the bottom are a few lines where you will enter your wireless interface. You can run `ifconfig` to find out what your             wireless adaper is called. It will likely be wlan0 or something like wlp**0.
+    - In `net.rc` towards the bottom there are a few lines where you will enter your wireless adapter interface. You can run `ifconfig` to find out what your wireless adaper is called. It will likely be `wlan0` or something to the effect of `wlp**0`.
     
 6. Open weather.rc and enter your openweathermap API key and your City_ID
 
+7. **Autorun at startup**
+   - Commands cn be run at login by placing a launcher in the `~/.config/autostart`
+    
 **Changes**
 + Compiled documentation and wrote README.md
 + Translated all Hungarian comments to English
@@ -106,7 +111,7 @@ In order to populate neccessary sensor data and achieve functionality with this 
 
 ## API Reference
 
-For the weatherrc configuration, you are going to have to obtain an [API Key from OpenWeatherMap](https://openweathermap.org/api in order to populate your weather data.)
+For the `weather.rc` configuration, you are going to have to obtain an [API Key from OpenWeatherMap](https://openweathermap.org/api) in order to populate your weather data. For referrence, API stands for "Application Programming Interface." The API key is a code passed in by computer programs calling an application programming interface (API) to identify the calling program, its developer, or its user to the Web site. Simply, it is a way to pull specific data from a web service to be used in a third-party fashion.
 
 ## Contributors
 
