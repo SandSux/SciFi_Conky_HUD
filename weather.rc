@@ -78,8 +78,8 @@ ${goto 22}${voffset 7}${font :size=16}${color1}${execi 300 jq -r ".name" ~/.cach
 ${goto 30}${voffset 4}${font :size=36}${execi 300 jq -r .main.temp ~/.cache/weather.json | awk '{print int($1+0.5)}' # round num}°\
 ${font}
 #minimum, maximum
-${goto 140}${voffset -45}${font :size=12}min: ${execi 300 jq ".list[0].temp.min" ~/.cache/forecast.json | awk '{print int($1+0.5)}'}°
-${goto 140}max: ${execi 300 jq ".list[0].temp.max" ~/.cache/forecast.json | awk '{print int($1+0.5)}'}°
+${goto 140}${voffset -45}${font :size=12}min: ${execi 300 jq ".list[0].main.temp_min" ~/.cache/forecast.json | awk '{print int($1+0.5)}'}°
+${goto 140}max: ${execi 300 jq ".list[0].main.temp_max" ~/.cache/forecast.json | awk '{print int($1+0.5)}'}°
 #aktuális ikon
 ${execi 300 cp -f ~/.conky/weather/$(jq .list[0].weather[0].id ~/.cache/forecast.json).png ~/.cache/weather-1.png}${image ~/.cache/weather-1.png -p 250,40 -s 120x72}\
 ${alignr 20}${voffset -60}${font :size=8}${execi 300 jq -r .main.pressure ~/.cache/weather.json | awk '{print int($1+0.5)}' # round num} hPa
@@ -93,10 +93,10 @@ ${goto 280}${execi 300 LANG=${template9} LC_TIME=${template9} date -d +3days +%^
 ${goto 408}${execi 300 LANG=${template9} LC_TIME=${template9} date -d +4days +%^A}\
 \
 ${voffset 20}\
-${goto 34}${execi 300 jq .list[1].temp.max ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°F / ${execi 300 jq .list[1].temp.min ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°F\
-${goto 162}${execi 300 jq .list[2].temp.max ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°F / ${execi 300 jq .list[2].temp.min ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°F\
-${goto 290}${execi 300 jq .list[3].temp.max ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°F / ${execi 300 jq .list[3].temp.min ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°F\
-${goto 418}${execi 300 jq .list[4].temp.max ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°F / ${execi 300 jq .list[4].temp.min ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°F\
+${goto 34}${execi 300 jq .list[1].main.temp_max ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°F / ${execi 300 jq .list[1].main.temp_min ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°F\
+${goto 162}${execi 300 jq .list[2].main.temp_max ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°F / ${execi 300 jq .list[2].main.temp_min ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°F\
+${goto 290}${execi 300 jq .list[3].main.temp_max ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°F / ${execi 300 jq .list[3].main.temp_min ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°F\
+${goto 418}${execi 300 jq .list[4].main.temp_max ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°F / ${execi 300 jq .list[4].main.temp_min ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°F\
 \
 ${execi 300 cp -f ~/.conky/weather/$(jq .list[1].weather[0].id ~/.cache/forecast.json).png ~/.cache/forecast-1.png}${image ~/.cache/forecast-1.png -p 24,230 -s 80x48}\
 ${execi 300 cp -f ~/.conky/weather/$(jq .list[2].weather[0].id ~/.cache/forecast.json).png ~/.cache/forecast-2.png}${image ~/.cache/forecast-2.png -p 152,230 -s 80x48}\
