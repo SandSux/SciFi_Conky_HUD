@@ -14,6 +14,13 @@ You can grab [the latest release from github](https://github.com/brndnmtthws/con
 
 The [GitHub Wiki](https://github.com/brndnmtthws/conky/wiki) is the central hub for all of Conky's documentation
 
+## Dependencies
+
+    - Conky-all package with LUA support and Cairo bindings.
+    - Openweathermap API Key
+    - jq
+    - lm-sensors
+
 ## Installation
 
 First and foremost we need to obtain the conky-all package
@@ -23,13 +30,6 @@ First and foremost we need to obtain the conky-all package
 You can also visit GitHub's Conky Wiki for more [Installation options and information](https://github.com/brndnmtthws/conky/wiki/Installation)
 
 Next, we need to install a few dependencies that did not come with our 'conky-all' package that we are going to need to get all these configs to run.
-
-## Dependencies
-
-    - Conky-all package with LUA support and Cairo bindings.
-    - Openweathermap API Key
-    - jq
-    - lm-sensors
 
 **Install JQ**
 
