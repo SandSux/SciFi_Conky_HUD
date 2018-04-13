@@ -2,7 +2,7 @@
 
 Conky is a free system monitor tool for the X window system on Linux. It is able to monitor many system varaibles including CPU status, swap space, temperatures, disk usage, processes, network interfaces, battery status and a slew of others and then display the information on your desktop. It is also capable of displaying time, calendars, weather and more.
 
-I cannot take full credit for this configuration. This beautiful config was written by a Hungarian developer; see "Contributors" section below for link to original file).
+I cannot take full credit for this configuration. This beautiful config was written by a Hungarian developer; (see "Contributors" section below for link to original file). I did, however, figure it out in its entirety, corrected syntax errors, tranlated the Hungarian in-line comments, created this repository and compiled ALL the documention. Cheers!
 
 You can grab [the latest release from github](https://github.com/brndnmtthws/conky/releases/latest)
 
@@ -26,28 +26,20 @@ Next, we need to install a few dependencies that did not come with our 'conky-al
 
 ## Dependencies
 
-    - Conky with LUA support and Cairo bindings.
+    - Conky-all package with LUA support and Cairo bindings.
     - Openweathermap API Key
     - jq
     - lm-sensors
 
 **Install JQ**
 
-JQ is a lightweight, command line JSON processor. Though it can be installed via `sudo apt install jq` we will need to to inform your system as to where to find jq first by adding the appropriate repository to our `sources.list` file. [More information](https://stedolan.github.io/jq/download/)
+JQ is a lightweight, command line JSON processor. If Aptitude (apt) can't find it in your existing repositories, you may need to add the line manually to your `sources.list` [More information](https://stedolan.github.io/jq/download/)
 
-1. Open your `sources.list` file in your favorite text editor
-
-  `sudo vim /etc/apt/sources.list`
-
-2. Add the following line to the bottom of your `sources.list` file:
-
-  `deb http://us.archive.ubuntu.com/ubuntu vivid main universe`
-
-3. Then run:
+1. Run:
 
   `sudo apt-get update`
 
-4. Now you can issue your install command:
+2. Install jq:
 
   `sudo apt-get install jq`
 
@@ -59,13 +51,13 @@ In order to populate neccessary sensor data and achieve functionality with this 
 
   `sudo apt-get install lm-sensors`
 
-2. Next, run `sudo sensors-detect` to configure sensors, then follow the prompts by responding "yes" to all. At the end of detection, lm-sensors will write out all detected sensors so that Conky can access the data. You can test the general function after configuration by running the command `sensors`
+2. Next, run `sudo sensors-detect` to find and configure sensors, then follow the prompts by responding "yes" to all. At the end of detection, lm-sensors will write out all detected sensors so that Conky can access the data. You can test the general function after configuration by running the command `sensors`
 
-3. Optional: Install Conky Manager (GUI tool for those who prefer not to work in the command line)
+3. Optional: If you wish, you can Install Conky Manager, a Graphical User Interface (GUI) tool for those who prefer not to work in the command line
 
     + Add the neccessary repository: `sudo add-apt-repository ppa:teejee2008/ppa`
 
-    + Update: `sudo apt update`
+    + Update: `sudo apt-get update`
 
     + Install Conky Manager: `sudo apt-get install conky-manager`
 
@@ -74,11 +66,17 @@ In order to populate neccessary sensor data and achieve functionality with this 
 1. Acquire this repository: `git clone https://github.com/SandSux/SciFi_Conky_HUD.git` 
 
 2. We need to relocate all of our conky files from this repo into a folder called `.conky` (The period indicates that this is a hidden file). 
-    + Create a directory in your home folder so that all of the paths in the configuration files link the .lua, .png, etc.         files correctly 
+    + Create a directory in your home folder so that all of the paths in the configuration files link the .lua, .png, etc.         files correctly. 
 
-    + Make directory:`cd && sudo mkdir ~/.conky`
-
+      `cd && sudo mkdir ~/.conky`
+    
     - Note: [CTRL + h] toggles hidden files from view
+    
+    + Move all of the contents of your cloned repository `SciFi_Conky_HUD` into your new `~/.conky` directory
+    
+      `mv ~/SciFi_Conky_HUD/* ~/.conky/`
+    
+    - Note: The asterisk (*) denotes ALL file types/extensions within a directory will be moved
 
 3. Openweathermap API - visit [OpenWeatherMap](https://openweathermap.org/api) to sign up for your API key
 
@@ -86,23 +84,26 @@ In order to populate neccessary sensor data and achieve functionality with this 
 
 + You will also need to find your City_ID [here](http://openweathermap.org/help/city_list.txt). (Use [CTRL+f] to search page) or use the included `city_list.txt` file (it's the same list as the linked one).
   
-3. Included in this repo is a file named "conky_start" which we need to issue a `chmod` command to in order to make it executable 
+3. Included in this repo is a file named "conky_start" which we need to issue a `chmod` command to in order to make it executable: 
 
       `chmod 755 conky_start`
-      + Move `conky-start' into you home directory (your path) so you it can be executed directly from the command line.
+      
+      + Move the 'conky-start' script into you home directory (your path) so that it can be executed directly from the command line with changing directories:
+     
+      `mv ~/.conky/conky_start /home/<USER>/conky_start`
       
 4. Now conky can be started by issuing the command:
     
-    `./conky_start`
+      `./conky_start &`
     
 5. Next, some values need to be changed in a couple configuration files so that they reflect your system hardware interfaces.
-    - Pick your favorite text editor and open the net.rc file. 
+    - Pick your favorite text editor and open the net.rc file. (i.e. Atom, Sublime, Pluma, etc.)
     - In `net.rc` towards the bottom there are a few lines where you will enter the designator for your wireless adapter interface marked as `<YOUR_WIFI_INTERFACE>`. If you are unsure what your wireless interface is called, run `ifconfig` to display a list of your network interfaces. It will likely be `wlan0` or something to the effect of `wlp**0`.
     
-6. Open your weather.rc file and enter your openweathermap 'API_KEY` and your 'CITY_ID' 
+6. Open your weather.rc file and enter your openweathermap 'API_KEY' and your 'CITY_ID' 
 
 7. Autorun at start:
-   - Commands can be run at login by placing a launcher in the `~/.config/autostart` or by adding an entry to your `Startup Applications`gui
+   - Commands can be run at login by placing a launcher in the `~/.config/autostart` or by adding an entry to your 'Startup Applications' gui
     
 **Changes**
 + Compiled documentation and wrote README.md
