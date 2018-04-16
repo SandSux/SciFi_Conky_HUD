@@ -2,7 +2,7 @@
 
 Conky is a free system monitor tool for the X window system on Linux. It is able to monitor many system varaibles including CPU status, swap space, temperatures, disk usage, processes, network interfaces, battery status and a slew of others and then display the information on your desktop. It is also capable of displaying time, calendars, weather and more.
 
-I cannot take full credit for this configuration. This beautiful config was written by a Hungarian developer; (see "Contributors" section below for link to original file). I did, however, figure it out in its entirety, corrected syntax errors, tranlated the Hungarian in-line comments, created this repository and compiled ALL the documention. Cheers!
+I cannot take full credit for this configuration. This beautiful config was written by a Hungarian developer; (see "Contributors" section below for link to original file). I did, however, figure it out in its entirety, corrected syntax errors, translated the Hungarian in-line comments, created this repository and compiled ALL the documention. Cheers!
 
 You can grab [the latest release from github](https://github.com/brndnmtthws/conky/releases/latest)
 
@@ -16,10 +16,10 @@ The [GitHub Wiki](https://github.com/brndnmtthws/conky/wiki) is the central hub 
 
 ## Dependencies
 
-    - Conky-all package with LUA support and Cairo bindings.
-    - Openweathermap API Key
-    - jq
-    - lm-sensors
+   - Conky-all package with LUA support and Cairo bindings.
+   - Openweathermap API Key
+   - jq
+   - lm-sensors
 
 ## Installation
 
@@ -33,7 +33,7 @@ Next, we need to install a few dependencies that did not come with our 'conky-al
 
 **Install JQ**
 
-JQ is a lightweight, command line JSON processor. If Aptitude (apt) can't find it in your existing repositories, you may need to add the line manually to your `sources.list` [More information](https://stedolan.github.io/jq/download/)
+JQ is a lightweight, command line JSON processor. If Aptitude (apt) can't find it in your existing repositories, you may need to add the line manually to your `sources.list` file [More information](https://stedolan.github.io/jq/download/)
 
 1. Run:
 
@@ -55,15 +55,23 @@ In order to populate neccessary sensor data and achieve functionality with this 
 
 3. Optional: If you wish, you can Install Conky Manager, a Graphical User Interface (GUI) tool for those who prefer not to work in the command line
 
-    + Add the neccessary repository: `sudo add-apt-repository ppa:teejee2008/ppa`
+    + Add the neccessary repository: 
+    
+    `sudo add-apt-repository ppa:teejee2008/ppa`
 
-    + Update: `sudo apt-get update`
+    + Update: 
+    
+    `sudo apt-get update`
 
-    + Install Conky Manager: `sudo apt-get install conky-manager`
+    + Install Conky Manager: 
+    
+    `sudo apt-get install conky-manager`
 
 ## Configuration
 
-1. Acquire this repository: `git clone https://github.com/SandSux/SciFi_Conky_HUD.git` 
+1. Acquire this repository:
+
+`git clone https://github.com/SandSux/SciFi_Conky_HUD.git` 
 
 2. We need to relocate all of our conky files from this repo into a folder called `.conky` (The period indicates that this is a hidden file). 
     + Create a directory in your home folder so that all of the paths in the configuration files link the .lua, .png, etc.         files correctly. 
