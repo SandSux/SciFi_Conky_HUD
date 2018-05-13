@@ -8,8 +8,8 @@ You can grab [the latest release from github](https://github.com/brndnmtthws/con
 
 ## Screenshots
 
+![screen](https://s31.postimg.cc/4zcql7fff/Sci_Fi_Conky_Desktop.gif)
 ![screen](https://user-images.githubusercontent.com/26425982/37259259-59794b1e-255a-11e8-9541-6cd5de5cd543.png)
-![screen](https://s31.postimg.cc/7qrext1cb/grayscale_conky.png)
 
 ## Documentation
 
