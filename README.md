@@ -9,7 +9,7 @@ You can grab [the latest release from github](https://github.com/brndnmtthws/con
 ## Screenshots
 
 ![screen](https://user-images.githubusercontent.com/26425982/37259259-59794b1e-255a-11e8-9541-6cd5de5cd543.png)
-![screen](https://s31.postimg.cc/obblxo2yz/scifi_conky_hud_grayscale.png)
+![screen](https://s31.postimg.cc/7qrext1cb/grayscale_conky.png)
 
 ## Documentation
 
