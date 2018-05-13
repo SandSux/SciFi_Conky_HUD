@@ -21,11 +21,11 @@ conky.config = {
     own_window_argb_value = 0,      				--degree of transparency 0-255
     own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager', 	--window properties below = skip_taskbar = ignore tray undecorated = remove frame and buttons override = window manager override sticky = all workspaces
     own_window_title = 'process',
-    minimum_width = 390,        					--minimum width
-    minimum_height = 380, 							--minimum height
+    minimum_width = 230,        					--minimum width
+    minimum_height = 290, 							--minimum height
     alignment = 'top_left', 						--top right corner
-    gap_x = 25,   								    --x direction shift
-    gap_y = 750, 								    --y direction shift
+    gap_x = 30,   								    --x direction shift
+    gap_y = 30, 								    --y direction shift
 
 -- Graphics settings --
     draw_shades = false, 							--test shading
