@@ -6,9 +6,10 @@ I cannot take full credit for this configuration. This beautiful config was writ
 
 You can grab [the latest release from github](https://github.com/brndnmtthws/conky/releases/latest)
 
-## Screenshot
+## Screenshots
 
 ![screen](https://user-images.githubusercontent.com/26425982/37259259-59794b1e-255a-11e8-9541-6cd5de5cd543.png)
+![screen](https://s31.postimg.cc/obblxo2yz/scifi_conky_hud_grayscale.png)
 
 ## Documentation
 
