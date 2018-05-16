@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sleep 1
-conky -c ~/.conky/user13.rc &
+conky -c ~/.conky/user.rc &
 conky -c ~/.conky/video.rc &
 conky -c ~/.conky/weather.rc &
 conky -c ~/.conky/net.rc &
