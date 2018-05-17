@@ -41,7 +41,7 @@ conky.config = {
     color1 = 'd59704',
     color2 = '794e64',
 
-    template1 = '~/.conky/images/anim13/thc-',
+    template1 = '~/.conky/images/anim4/thc-',
     template2 = '-p 15,47 -s 200x200'
 
 };
