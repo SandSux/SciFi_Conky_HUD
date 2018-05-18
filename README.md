@@ -9,7 +9,6 @@ You can grab [the latest release from github](https://github.com/brndnmtthws/con
 ## Screenshots
 <img src="https://media.giphy.com/media/82D3cOGgUfiYD5pW7e/giphy.gif" height="450" width="900">
 <img src="https://media.giphy.com/media/d5urFuwg6OmrOo2AXs/giphy.gif" height="450" width="900">
-<img src="https://user-images.githubusercontent.com/26425982/37259259-59794b1e-255a-11e8-9541-6cd5de5cd543.png">
 
 ## Documentation
 
