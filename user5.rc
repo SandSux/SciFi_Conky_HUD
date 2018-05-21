@@ -1,0 +1,119 @@
+--configuration for small animation in top_left corner; images/anim5--
+-- Conky settings --
+    update_interval = .2,
+    background = true,
+    cpu_avg_samples = 4,
+    net_avg_samples = 2,
+    diskio_avg_samples = 2,
+    override_utf8_locale = true,
+    double_buffer = true,
+    no_buffers  = false,
+    text_buffer_size = 256,
+    imlib_cache_size = 10,
+    max_user_text = 15000,
+    format_human_readable = true,
+
+-- Window specifications --
+    own_window = true,
+    own_window_type = 'normal',
+    own_window_transparent = true,
+    own_window_argb_visual = true,
+    own_window_argb_value = 0,
+    own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager',
+    own_window_title = 'user',
+    minimum_width = 230,
+    minimum_height = 290,
+    alignment = 'top_left',
+    gap_x = 30,
+    gap_y = 30,
+
+-- Graphics settings --
+    draw_shades = false,
+    draw_outline = false,
+    draw_borders = false,
+    draw_graph_borders = false,
+    border_width = 0,
+
+-- Text settings --
+    use_xft = true,
+    font = 'Ubuntu:size=7',
+    color0 = 'FFFFFF',
+    color1 = 'ffffff',
+    color2 = 'FFFFFF',
+
+    template1 = '~/.conky/SciFi_Conky_HUD/images/anim5/dna-',
+    template2 = '-p 15,47'
+
+};
+
+conky.text = [[
+${image ~/.conky/images/user.png -p 0,0}
+${alignc}${color0}${font :bold:size=7}${kernel} - $machine
+#${'image ~/.conky/SciFi_Conky_HUD/images/anim5/dna.gif -p 15,47 -s 200x200'},
+${voffset 4}${goto 10}${execi 600 whoami} - ${nodename}
+${voffset -4}${alignr 10}${uptime}
+${voffset 235}${alignc}${execpi 6000 lsb_release -d | grep 'Descr'|awk {'print $2 " " $3" " $4" " $5'}}
+
+
+${if_updatenr 1}
+${template2}}${endif}${if_updatenr 2}${image ${template1}0.png
+${template2}}${endif}${if_updatenr 3}${image ${template1}1.png
+${template2}}${endif}${if_updatenr 4}${image ${template1}2.png
+${template2}}${endif}${if_updatenr 6}${image ${template1}4.png
+${template2}}${endif}${if_updatenr 7}${image ${template1}5.png
+${template2}}${endif}${if_updatenr 8}${image ${template1}6.png
+${template2}}${endif}${if_updatenr 9}${image ${template1}7.png
+${template2}}${endif}${if_updatenr 10}${image ${template1}8.png
+${template2}}${endif}${if_updatenr 11}${image ${template1}9.png
+${template2}}${endif}${if_updatenr 12}${image ${template1}10.png
+${template2}}${endif}${if_updatenr 13}${image ${template1}11.png
+${template2}}${endif}${if_updatenr 14}${image ${template1}12.png
+${template2}}${endif}${if_updatenr 15}${image ${template1}13.png
+${template2}}${endif}${if_updatenr 16}${image ${template1}14.png
+${template2}}${endif}${if_updatenr 17}${image ${template1}15.png
+${template2}}${endif}${if_updatenr 18}${image ${template1}16.png
+${template2}}${endif}${if_updatenr 19}${image ${template1}17.png
+${template2}}${endif}${if_updatenr 20}${image ${template1}18.png
+${template2}}${endif}${if_updatenr 21}${image ${template1}20.png
+${template2}}${endif}${if_updatenr 22}${image ${template1}21.png
+${template2}}${endif}${if_updatenr 23}${image ${template1}22.png
+${template2}}${endif}${if_updatenr 24}${image ${template1}23.png
+${template2}}${endif}${if_updatenr 25}${image ${template1}24.png
+${template2}}${endif}${if_updatenr 26}${image ${template1}25.png
+${template2}}${endif}${if_updatenr 27}${image ${template1}26.png
+${template2}}${endif}${if_updatenr 28}${image ${template1}27.png
+${template2}}${endif}${if_updatenr 29}${image ${template1}28.png
+${template2}}${endif}${if_updatenr 30}${image ${template1}29.png
+${template2}}${endif}${if_updatenr 31}${image ${template1}30.png
+${template2}}${endif}${if_updatenr 32}${image ${template1}31.png
+${template2}}${endif}${if_updatenr 33}${image ${template1}32.png
+${template2}}${endif}${if_updatenr 34}${image ${template1}33.png
+${template2}}${endif}${if_updatenr 35}${image ${template1}34.png
+${template2}}${endif}${if_updatenr 36}${image ${template1}35.png
+${template2}}${endif}${if_updatenr 37}${image ${template1}36.png
+${template2}}${endif}${if_updatenr 38}${image ${template1}37.png
+${template2}}${endif}${if_updatenr 39}${image ${template1}38.png
+${template2}}${endif}${if_updatenr 40}${image ${template1}39.png
+${template2}}${endif}${if_updatenr 41}${image ${template1}40.png
+${template2}}${endif}${if_updatenr 42}${image ${template1}41.png
+${template2}}${endif}${if_updatenr 43}${image ${template1}42.png
+${template2}}${endif}${if_updatenr 44}${image ${template1}43.png
+${template2}}${endif}${if_updatenr 45}${image ${template1}44.png
+${template2}}${endif}${if_updatenr 46}${image ${template1}45.png
+${template2}}${endif}${if_updatenr 47}${image ${template1}46.png
+${template2}}${endif}${if_updatenr 48}${image ${template1}47.png
+${template2}}${endif}${if_updatenr 49}${image ${template1}48.png
+${template2}}${endif}${if_updatenr 50}${image ${template1}49.png
+${template2}}${endif}${if_updatenr 51}${image ${template1}50.png
+${template2}}${endif}${if_updatenr 52)${image ${template1}51.png
+${template2}}${endif}${if_updatenr 53}${image ${template1}52.png
+${template2}}${endif}${if_updatenr 54}${image ${template1}53.png
+${template2}}${endif}${if_updatenr 55}${image ${template1}54.png
+${template2}}${endif}${if_updatenr 56}${image ${template1}55.png
+${template2}}${endif}${if_updatenr 57}${image ${template1}56.png
+${template2}}${endif}${if_updatenr 58}${image ${template1}57.png
+${template2}}${endif}${if_updatenr 59}${image ${template1}58.png
+${template2}}${endif}${if_updatenr 60}${image ${template1}59.png
+${template2}}${endif}${if_updatenr 61}${image ${template1}1.png
+${template2}}${endif}
+]];
