@@ -1,0 +1,77 @@
+#The corresponding animation files ../images/anim6
+conky.config = {
+-- Conky settings --
+    update_interval = .18,							--frissítési idővallum másodpercben
+    background = true,								--áttetsző háttér
+    cpu_avg_samples = 2,							--cpu pontosabb monitorozásához
+    net_avg_samples = 2,							--internet pontosabb monitorozása
+    diskio_avg_samples = 2, 						--meghajtó pontosabb monitorozásához
+    override_utf8_locale = true,					--karakterkódolás felülbírálása
+    double_buffer = true,							--nem villodzik az ablak
+    no_buffers  = false,
+    text_buffer_size = 256, 						--szöveg buffer mérete
+    imlib_cache_size = 10,
+    max_user_text = 15000,
+    format_human_readable = true,					--mértékegységek nem bájtokban
+
+-- Window specifications --
+    own_window = true,  							--saját ablakbeállítások bekapcsolása
+    own_window_type = 'normal',   					--ablaktípusok, override=ablakmenedzser szabályi nem vonatkoznak rá, desktop=díszítés nélküli panel=mindig felül,  dock=mindig felül, normal=normál
+    own_window_transparent = false,  				--conky ablak átlátszóvá válik
+    own_window_argb_visual = true,  				--átlátszó ablak
+    own_window_argb_value = 0,      				--átlátszóság mértéke 0-255
+    own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager', 	--ablak tulajdonságai below=alultartás skip_taskbar=tálca mellőzése undecorated=keret és gombok eltávolítása override=ablakkezelő felülbírálása sticky=minden munkaterületen
+    own_window_title = 'video',
+    minimum_width = 512,        					--minimum szélesség
+    minimum_height = 301, 							--minimum magasság
+    alignment = 'top_left', 						--jobb felső sarokba igazít
+    gap_x = 280,   								    --x irányba eltolás
+    gap_y = 30, 								    --y irányba eltolás
+
+-- Graphics settings --
+    draw_shades = false, 							--szöveg árnyékolása
+    draw_outline = false,							--körülrajzolás
+    draw_borders = true,							--téglalap alakú keretet rajzol
+    draw_graph_borders = false, 					--keret a grafikon köré
+    border_width = 0, 								--keret vastagsága
+
+-- Text settings --
+    use_xft = true, 								--élsimítás
+    font = 'Ubuntu:size=7',          				--alapértelmezett betütípus
+    color0 = '39c9c4',								--előre meghatározott szín
+    color1 = 'd59704',
+    color2 = '794e64',
+  
+    template1 = '~/.conky/images/anim6/diagram-',
+    template2 = '-p 9,12',
+    
+};
+
+conky.text = [[
+#${image ~/.conky/images/video.png -p 0,0}
+${template2}}${if_updatenr 1}${image ${template1}0.png 
+${template2}}${endif}${if_updatenr 2}${image ${template1}1.png ${template2}}${endif}${if_updatenr 3}${image ${template1}2.png ${template2}}${endif}${if_updatenr 4}${image ${template1}3.png ${template2}}${endif}${if_updatenr 5}${image ${template1}4.png ${template2}}${endif}${if_updatenr 6}${image ${template1}5.png ${template2}}${endif}${if_updatenr 7}${image ${template1}6.png ${template2}}${endif}${if_updatenr 8}${image ${template1}7.png ${template2}}${endif}${if_updatenr 9}${image ${template1}8.png ${template2}}${endif}${if_updatenr 10}${image ${template1}9.png 
+${template2}}${endif}${if_updatenr 11}${image ${template1}10.png 
+${template2}}${endif}${if_updatenr 12}${image ${template1}11.png ${template2}}${endif}${if_updatenr 13}${image ${template1}12.png ${template2}}${endif}${if_updatenr 14}${image ${template1}13.png ${template2}}${endif}${if_updatenr 15}${image ${template1}14.png ${template2}}${endif}${if_updatenr 16}${image ${template1}15.png ${template2}}${endif}${if_updatenr 17}${image ${template1}16.png ${template2}}${endif}${if_updatenr 18}${image ${template1}17.png ${template2}}${endif}${if_updatenr 19}${image ${template1}18.png ${template2}}${endif}${if_updatenr 20}${image ${template1}19.png 
+${template2}}${endif}${if_updatenr 21}${image ${template1}20.png 
+${template2}}${endif}${if_updatenr 23}${image ${template1}21.png ${template2}}${endif}${if_updatenr 24}${image ${template1}22.png ${template2}}${endif}${if_updatenr 25}${image ${template1}23.png ${template2}}${endif}${if_updatenr 26}${image ${template1}24.png ${template2}}${endif}${if_updatenr 27}${image ${template1}25.png ${template2}}${endif}${if_updatenr 28}${image ${template1}26.png ${template2}}${endif}${if_updatenr 29}${image ${template1}27.png
+${template2}}${endif}${if_updatenr 30}${image ${template1}28.png 
+${template2}}${endif}${if_updatenr 31}${image ${template1}29.png 
+${template2}}${endif}${if_updatenr 32}${image ${template1}30.png 
+${template2}}${endif}${if_updatenr 33}${image ${template1}31.png ${template2}}${endif}${if_updatenr 34}${image ${template1}32.png ${template2}}${endif}${if_updatenr 35}${image ${template1}33.png ${template2}}${endif}${if_updatenr 36}${image ${template1}34.png ${template2}}${endif}${if_updatenr 37}${image ${template1}35.png ${template2}}${endif}${if_updatenr 38}${image ${template1}36.png ${template2}}${endif}${if_updatenr 39}${image ${template1}37.png ${template2}}${endif}${if_updatenr 40}${image ${template1}38.png ${template2}}${endif}${if_updatenr 41}${image ${template1}39.png 
+${template2}}${endif}${if_updatenr 42}${image ${template1}40.png 
+${template2}}${endif}${if_updatenr 43}${image ${template1}41.png ${template2}}${endif}${if_updatenr 44}${image ${template1}42.png ${template2}}${endif}${if_updatenr 45}${image ${template1}43.png ${template2}}${endif}${if_updatenr 46}${image ${template1}44.png ${template2}}${endif}${if_updatenr 47}${image ${template1}45.png ${template2}}${endif}${if_updatenr 48}${image ${template1}46.png ${template2}}${endif}${if_updatenr 49}${image ${template1}47.png ${template2}}${endif}${if_updatenr 50}${image ${template1}48.png ${template2}}${endif}${if_updatenr 51}${image ${template1}49.png 
+${template2}}${endif}${if_updatenr 52}${image ${template1}50.png 
+${template2}}${endif}${if_updatenr 52}${image ${template1}51.png ${template2}}${endif}${if_updatenr 53}${image ${template1}52.png ${template2}}${endif}${if_updatenr 54}${image ${template1}53.png ${template2}}${endif}${if_updatenr 55}${image ${template1}54.png ${template2}}${endif}${if_updatenr 56}${image ${template1}55.png ${template2}}${endif}${if_updatenr 57}${image ${template1}56.png ${template2}}${endif}${if_updatenr 58}${image ${template1}57.png ${template2}}${endif}${if_updatenr 59}${image ${template1}58.png ${template2}}${endif}${if_updatenr 60}${image ${template1}59.png 
+${template2}}${endif}${if_updatenr 61}${image ${template1}60.png 
+${template2}}${endif}${if_updatenr 62}${image ${template1}61.png ${template2}}${endif}${if_updatenr 63}${image ${template1}62.png ${template2}}${endif}${if_updatenr 64}${image ${template1}63.png ${template2}}${endif}${if_updatenr 65}${image ${template1}64.png ${template2}}${endif}${if_updatenr 66}${image ${template1}65.png ${template2}}${endif}${if_updatenr 67}${image ${template1}66.png ${template2}}${endif}${if_updatenr 68}${image ${template1}67.png ${template2}}${endif}${if_updatenr 69}${image ${template1}68.png ${template2}}${endif}${if_updatenr 70}${image ${template1}69.png 
+${template2}}${endif}${if_updatenr 71}${image ${template1}70.png 
+${template2}}${endif}${if_updatenr 72}${image ${template1}71.png ${template2}}${endif}${if_updatenr 73}${image ${template1}72.png ${template2}}${endif}${if_updatenr 74}${image ${template1}73.png ${template2}}${endif}${if_updatenr 75}${image ${template1}74.png ${template2}}${endif}${if_updatenr 76}${image ${template1}75.png ${template2}}${endif}${if_updatenr 77}${image ${template1}76.png ${template2}}${endif}${if_updatenr 78}${image ${template1}77.png ${template2}}${endif}${if_updatenr 79}${image ${template1}78.png ${template2}}${endif}${if_updatenr 80}${image ${template1}79.png 
+${template2}}${endif}${if_updatenr 81}${image ${template1}80.png 
+${template2}}${endif}${if_updatenr 82}${image ${template1}81.png ${template2}}${endif}${if_updatenr 83}${image ${template1}82.png ${template2}}${endif}${if_updatenr 84}${image ${template1}83.png ${template2}}${endif}${if_updatenr 85}${image ${template1}84.png ${template2}}${endif}${if_updatenr 86}${image ${template1}85.png ${template2}}${endif}${if_updatenr 87}${image ${template1}86.png ${template2}}${endif}${if_updatenr 88}${image ${template1}87.png ${template2}}${endif}${if_updatenr 89}${image ${template1}88.png ${template2}}${endif}${if_updatenr 90}${image ${template1}89.png 
+${template2}}${endif}${if_updatenr 91}${image ${template1}90.png 
+${template2}}${endif}${if_updatenr 92}${image ${template1}91.png ${template2}}${endif}${if_updatenr 93}${image ${template1}92.png ${template2}}${endif}${if_updatenr 94}${image ${template1}93.png ${template2}}${endif}${if_updatenr 95}${image ${template1}94.png ${template2}}${endif}${if_updatenr 96}${image ${template1}95.png ${template2}}${endif}${if_updatenr 97}${image ${template1}96.png ${template2}}${endif}${if_updatenr 98}${image ${template1}97.png
+${template2}}${endif}${if_updatenr 99}${image ${template1}98.png 
+${template2}}${endif}${if_updatenr 100}{image ${template1}99.png
+${template2}}${endif}
+]];
