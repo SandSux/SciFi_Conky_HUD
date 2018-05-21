@@ -84,7 +84,7 @@ In order to populate neccessary sensor data and achieve functionality with this 
     
       `mv ~/SciFi_Conky_HUD/* ~/.conky/`
     
-    - Note: The asterisk (*) denotes ALL file types/extensions within a directory will be moved
+    Note: The asterisk denotes ALL file types/extensions within a directory
 
 3. Openweathermap API - visit [OpenWeatherMap](https://openweathermap.org/api) to sign up for your API key
 
@@ -117,6 +117,8 @@ In order to populate neccessary sensor data and achieve functionality with this 
 + Compiled documentation and wrote README.md
 + Translated all Hungarian comments to English
 + Changed UTF-8 character encoding from Hungarian to en_US.UTF-8 on line 67 of weather.rc
+
+## See README_Add-Animation.md for general instructions on adding an animated image to you desktop configuration. Also included is a small collection of gif images to get you started in /images/SAMPLE-gifs
 
 ## API Reference
 
