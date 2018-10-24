@@ -336,7 +336,7 @@ function display_coffee_table(display)
 	    if value2 == max_value then value2 = 0 end
 	    value = value2 + (tonumber(str:sub(4,5))/60)        	    
 	else
-            str = string.format('${%s %s}',data['name'], data['arg'])
+            str = string.format('${{%s %s}}',data['name'], data['arg'])
             str = conky_parse(str)
             value = tonumber(str)
         end 	
