@@ -96,7 +96,7 @@ In order to populate neccessary sensor data and achieve functionality with this 
 
       `chmod 755 conky_start`
       
-      + Move the 'conky-start' script into you home directory (your path) so that it can be executed directly from the command line with changing directories:
+      + Move the 'conky-start' script into you home directory (your path) so that it can be executed directly from the command line without changing directories:
      
       `mv ~/.conky/conky_start /home/<USER>/conky_start`
       
