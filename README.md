@@ -20,6 +20,7 @@ The [GitHub Wiki](https://github.com/brndnmtthws/conky/wiki) is the central hub 
    - Openweathermap API Key
    - jq
    - lm-sensors
+   - hddtemp
 
 ## Installation
 
@@ -53,7 +54,11 @@ In order to populate neccessary sensor data and achieve functionality with this 
 
 2. Next, run `sudo sensors-detect` to find and configure sensors, then follow the prompts by responding "yes" to all. At the end of detection, lm-sensors will write out all detected sensors so that Conky can access the data. You can test the general function after configuration by running the command `sensors`
 
-3. Optional: If you wish, you can Install Conky Manager, a Graphical User Interface (GUI) tool for those who prefer not to work in the command line
+3. Install hddtemp:
+ 
+  'sudo apt install hddtemp'
+
+4. Optional: If you wish, you can Install Conky Manager, a Graphical User Interface (GUI) tool for those who prefer not to work in the command line
 
     + Add the neccessary repository: 
     
@@ -107,6 +112,8 @@ In order to populate neccessary sensor data and achieve functionality with this 
 5. Next, some values need to be changed in a couple configuration files so that they reflect your system hardware interfaces.
     - Pick your favorite text editor and open the net.rc file. (i.e. Atom, Sublime, Pluma, etc.)
     - In `net.rc` towards the bottom there are a few lines where you will enter the designator for your wireless adapter interface marked as `<YOUR_WIFI_INTERFACE>`. If you are unsure what your wireless interface is called, run `ifconfig` to display a list of your network interfaces. It will likely be `wlan0` or something to the effect of `wlp**0`.
+    - Next, there is a path that we need to update in /lua/circle_anim.lua located on line 4 called IMAGEPATH. Update that path to reflect that of your system and you will have a working lua clock rings configuration.
+    - Finally, there are some paths in the hdd.rc file that need to be changed to reflect your system on lines 59, 60, and 63. 
     
 6. Open your weather.rc file and enter your openweathermap 'API_KEY' and your 'CITY_ID' 
 
