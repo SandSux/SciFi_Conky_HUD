@@ -15,7 +15,7 @@ conky.config = {
 
 -- Window specifications --
     own_window = true,
-    own_window_type = 'normal',
+    own_window_type = 'desktop',
     own_window_transparent = false,
     own_window_argb_visual = true,
     own_window_argb_value = 0,
@@ -64,7 +64,7 @@ template8="<TEMP_UNIT>",
 --  Locale (e.g. "es_ES.UTF-8")
 --  Leave empty for default
 -------------------------------------
-template9="en_US.UTF-8"         --character encoding protocol - chsnged from Hungarian HG set to em_US
+template9="en_US.UTF-8"         --character encoding protocol
 
 };
 
