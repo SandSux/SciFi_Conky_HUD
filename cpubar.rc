@@ -15,7 +15,7 @@ conky.config = {
 
 -- Window specifications --
     own_window = true,  							--turn on your own window settings
-    own_window_type = 'normal',   					--window types, override = window manager rules do not apply, desktop = unedited panel = always top, dock = always over, normal = normal
+    own_window_type = 'desktop',   					--window types, override = window manager rules do not apply, desktop = unedited panel = always top, dock = always over, normal = normal
     own_window_transparent = false,  				--conky window beocmes transparent
     own_window_argb_visual = true,  				--transparent window
     own_window_argb_value = 0,      				--degree of transparency 0-255
