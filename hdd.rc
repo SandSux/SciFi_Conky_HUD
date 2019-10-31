@@ -15,7 +15,7 @@ conky.config = {
 
 -- Window specifications --
     own_window = true,  							--turn on your own window setings
-    own_window_type = 'normal',   					--window types, override = window manager rules do not apply, desktop = unedited panel = always top, dock = always over, normal = normal
+    own_window_type = 'desktop',   					--window types, override = window manager rules do not apply, desktop = unedited panel = always top, dock = always over, normal = normal
     own_window_transparent = false,  				--conky window becomes transparent
     own_window_argb_visual = true,  				--transparent Window
     own_window_argb_value = 0,      				--degree of transparency 0-255
@@ -56,9 +56,9 @@ ${alignc}sdb: Hitachi Travelstar 7K1000 ${color2}${execi 10 hddtemp /dev/sdb |cu
 ${color}${goto 280}${voffset 30}Used${alignr 15}Free
 ${image ~/.conky/images/separator-h-2.png -p 237,70 -s 115x1}
 ${goto 240}Root${goto 275}${fs_used /}${alignr 10}${fs_free /}
-${goto 240}${voffset 5}Home${goto 275}${fs_used /home/met}${alignr 10}${fs_free /home/met}
-${goto 240}${voffset 5}Data${goto 275}${fs_used /media/met/Data/}${alignr 10}${fs_free /media/met/Data/}
+${goto 240}${voffset 5}Home${goto 275}${fs_used /home/<Your Path Here>}${alignr 10}${fs_free /home/<Your Path Here>}
+${goto 240}${voffset 5}Data${goto 275}${fs_used /media/<Your Path Here>/Data/}${alignr 10}${fs_free /media/<YOUR PATH HERE>/Data/}
 ${image ~/.conky/images/separator-h-2.png -p 237,130 -s 115x1}
 ${voffset 45}${goto 130}root${goto 167}home${goto 209}data
-${font :size=6}${goto 120}${fs_size /}${goto 165}${fs_size /home/met}${goto 210}${fs_size /media/met/Data/}
+${font :size=6}${goto 120}${fs_size /}${goto 165}${fs_size /home/<Your Path Here>}${goto 210}${fs_size /media/<YOUR PATH HERE>/Data/}
 ]];
