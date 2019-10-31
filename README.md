@@ -2,7 +2,7 @@
 
 Conky is a free system monitor tool for the X window system on Linux. It is able to monitor many system varaibles including CPU status, swap space, temperatures, disk usage, processes, network interfaces, battery status and a slew of others and then display the information on your desktop. It is also capable of displaying time, calendars, weather and more.
 
-I cannot take full credit for this configuration. This beautiful config was written by a Hungarian developer; (see "Contributors" section below for link to original file). I did, however, figure it out in its entirety, corrected syntax errors, translated the Hungarian in-line comments, created this repository and compiled ALL the documention. Cheers!
+I cannot take all the credit for this configuration. This beautiful config was written by a Hungarian developer; (see "Contributors" section below for link to original file). I did, however, figure it out in its entirety, corrected syntax errors, translated the Hungarian in-line comments, created this repository and compiled ALL the documention. Cheers!
 
 You can grab [the latest release from github](https://github.com/brndnmtthws/conky/releases/latest)
 
@@ -116,8 +116,8 @@ If you wish, you can Install Conky Manager, a Graphical User Interface (GUI) too
 5. Next, some values need to be changed in a couple configuration files so that they reflect your system hardware interfaces.
     - Pick your favorite text editor and open the net.rc file. (i.e. Atom, Sublime, Pluma, etc.)
     - In `net.rc` towards the bottom there are a few lines where you will enter the designator for your wireless adapter interface marked as `<YOUR_WIFI_INTERFACE>`. If you are unsure what your wireless interface is called, run `ifconfig` to display a list of your network interfaces. It will likely be `wlan0` or something to the effect of `wlp**0`.
-    - Finally, there is a path that we need to update in /lua/circle_anim.lua located on line 4 called IMAGEPATH. Update that path to reflect that of your system and you will have a working lua clock rings configuration.
-    - Finally, there are some paths in the hdd.rc file that need to be changed to reflect your system on lines 59, 60, and 63. 
+    - Next, there is a path that we need to update in `/lua/circle_anim.lua` located on line 4 called `IMAGEPATH`. Update that path to reflect that of your system and you will have a working lua clock rings configuration.
+    - Finally, there are some paths in the `hdd.rc` file that need to be changed to reflect your system on lines 59, 60, and 63 
     
 6. Open your weather.rc file and enter your openweathermap 'API_KEY' and your 'CITY_ID' 
 
@@ -129,7 +129,7 @@ If you wish, you can Install Conky Manager, a Graphical User Interface (GUI) too
 + Translated all Hungarian comments to English
 + Changed UTF-8 character encoding from Hungarian to en_US.UTF-8 on line 67 of weather.rc
 
-## See README_Add-Animation.md for general instructions on adding an animated image to you desktop configuration. Also included is a small collection of gif images to get you started in /images/SAMPLE-gifs
+## See README_Add-Animation.md for general instructions on adding your own animated image to the desktop configuration. Also included is a small collection of gif images to get you started in /images/SAMPLE-gifs
 
 ## API Reference
 
