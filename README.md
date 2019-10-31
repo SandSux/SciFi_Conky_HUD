@@ -2,7 +2,7 @@
 
 Conky is a free system monitor tool for the X window system on Linux. It is able to monitor many system varaibles including CPU status, swap space, temperatures, disk usage, processes, network interfaces, battery status and a slew of others and then display the information on your desktop. It is also capable of displaying time, calendars, weather and more.
 
-I cannot take all the credit for this configuration. This beautiful config was written by a Hungarian developer; (see "Contributors" section below for link to original file). I did, however, figure it out in its entirety, corrected syntax errors, translated the Hungarian in-line comments, created this repository and compiled ALL the documention. Cheers!
+Enjoy & Cheers! 
 
 You can grab [the latest release from github](https://github.com/brndnmtthws/conky/releases/latest)
 
