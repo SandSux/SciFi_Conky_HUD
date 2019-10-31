@@ -119,7 +119,7 @@ If you wish, you can Install Conky Manager, a Graphical User Interface (GUI) too
     - Next, there is a path that we need to update in `/lua/circle_anim.lua` located on line 4 called `IMAGEPATH`. Update that path to reflect that of your system and you will have a working lua clock rings configuration.
     - Finally, there are some paths in the `hdd.rc` file that need to be changed to reflect your system on lines 59, 60, and 63 
     
-6. Open your weather.rc file and enter your openweathermap 'API_KEY' and your 'CITY_ID' 
+6. Open your weather.rc file and enter your openweathermap `API_KEY` and your `CITY_ID` 
 
 7. Autorun at start:
    - Commands can be run at login by placing a launcher in the `~/.config/autostart` or by adding an entry to your 'Startup Applications' gui
