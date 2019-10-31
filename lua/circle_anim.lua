@@ -1,7 +1,7 @@
 require 'cairo'
 
 -- Set the path to images below.
-IMAGEPATH = "/home/met/.conky/images/"
+IMAGEPATH = "/home/<YOUR PATH HERE>/.conky/images/"
 
 
 function conky_main()
